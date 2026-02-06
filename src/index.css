@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FRIDA Health Design System
+ * Updated Palette: Rosewood (#640D14) & White
+ * Monochromatic, bold, and elegant.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* * Core Brand Color: Rosewood (#640D14) 
+     * HSL approx: 355deg 77% 22%
+     */
+
+    /* Base */
+    --background: 0 0% 100%;           /* Pure White */
+    --foreground: 355 70% 10%;         /* Very Dark Rosewood (almost black) */
+
+    --card: 0 0% 100%;
+    --card-foreground: 355 70% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 355 70% 10%;
+
+    /* Primary: Rosewood */
+    --primary: 355 77% 22%;
+    --primary-foreground: 0 0% 100%;   /* White text on Rosewood */
+
+    /* Secondary: Light Rosewood Tint */
+    --secondary: 355 30% 96%;
+    --secondary-foreground: 355 77% 22%;
+
+    /* Muted: Subtle Rose Gray */
+    --muted: 355 10% 96%;
+    --muted-foreground: 355 20% 50%;
+
+    /* Accent: Slightly lighter Rosewood for interactions */
+    --accent: 355 30% 93%;
+    --accent-foreground: 355 77% 22%;
+
+    /* Destructive - Keeping Red but aligned to palette */
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 355 20% 90%;
+    --input: 355 20% 90%;
+    --ring: 355 77% 22%;
+    --radius: 0.5rem;
+
+    /* * Extended Palette Remapping 
+     * Mapping old semantic names (slate, sage, etc.) to the new Rosewood scale
+     * to ensure "shades of this colour only" rule is strictly followed.
+     */
+    
+    /* Cream -> White/Off-White */
+    --cream: 0 0% 100%;
+    --cream-dark: 355 10% 98%;
+
+    /* Slate (Old Primary) -> Rosewood shades */
+    --slate: 355 77% 22%;
+    --slate-light: 355 60% 35%;
+    --slate-muted: 355 30% 60%;
+
+    /* Terracotta -> Rosewood shades */
+    --terracotta: 355 70% 30%;
+    --terracotta-light: 355 50% 80%;
+
+    /* Sage (Old Green) -> Pale Rosewood/White shades */
+    --sage: 355 10% 92%;
+    --sage-light: 355 5% 97%;
+
+    /* Navy -> Deep Rosewood */
+    --navy: 355 80% 15%;
+
+    /* Gold -> Rosewood Highlight */
+    --gold: 355 60% 60%; 
+
+    /* Sidebar Defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 355 70% 10%;
+    --sidebar-primary: 355 77% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 355 10% 95%;
+    --sidebar-accent-foreground: 355 77% 22%;
+    --sidebar-border: 355 20% 90%;
+    --sidebar-ring: 355 77% 22%;
+  }
+
+  .dark {
+    /* Dark Mode: Deep Rosewood Backgrounds, White Text */
+    --background: 355 60% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 355 60% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 355 60% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 355 60% 35%;  /* Lighter Rosewood for dark mode contrast */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 355 40% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 355 40% 12%;
+    --muted-foreground: 355 20% 70%;
+
+    --accent: 355 40% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 60% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 355 40% 20%;
+    --input: 355 40% 20%;
+    --ring: 355 60% 35%;
+
+    /* Extended Palette Dark Mode Remapping */
+    --cream: 355 50% 10%;
+    --cream-dark: 355 50% 8%;
+    
+    --slate: 355 50% 30%;
+    --slate-light: 355 40% 40%;
+    --slate-muted: 355 20% 60%;
+    
+    --terracotta: 355 60% 40%;
+    --terracotta-light: 355 40% 25%;
+    
+    --sage: 355 30% 20%;
+    --sage-light: 355 20% 15%;
+    
+    --navy: 355 60% 25%;
+    --gold: 355 50% 50%;
+
+    --sidebar-background: 355 60% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 355 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 355 40% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 355 40% 20%;
+    --sidebar-ring: 355 60% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-medium tracking-tight text-primary; /* Headers now use Primary (Rosewood) */
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  /* Glass effect for navbar */
+  .glass-nav {
+    @apply backdrop-blur-md bg-white/90 border-b border-border/50; /* Forced white background for cleanliness */
+  }
+
+  /* Editorial image treatment */
+  .editorial-image {
+    @apply object-cover grayscale-[10%] contrast-[1.05];
+  }
+
+  /* Elegant hover underline */
+  .hover-underline {
+    @apply relative;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[1px] bg-primary scale-x-0 origin-right transition-transform duration-300;
+  }
+
+  .hover-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1;
+  }
+
+  /* Metric number styling */
+  .metric-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary;
+  }
+
+  /* Subtle gradient backgrounds - Updated to Rosewood tints */
+  .gradient-cream {
+    background: linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .gradient-sage {
+    background: linear-gradient(180deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+  }
+
+  /* Button variants base */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-200;
+  }
+
+  /* Text styles */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Partner logo styling */
+  .partner-logo {
+    @apply opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+
+  /* Fade in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Subtle float animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Scroll indicator pulse */
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.4; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(8px); }
+  }
+
+  .animate-scroll-pulse {
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+}
