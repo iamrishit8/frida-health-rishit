@@ -46,7 +46,7 @@ export function FeaturedSection() {
             <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium tracking-wider uppercase text-terracotta bg-terracotta/10 rounded-full">
               Featured
             </span>
-            <h2>Latest Updates</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Latest Updates</h2>
           </div>
           <Link to="/media">
             <Button variant="ghost" className="group text-muted-foreground hover:text-foreground">
@@ -66,31 +66,31 @@ export function FeaturedSection() {
             >
               <Link
                 to={item.href}
-                className="group flex flex-col h-full p-6 bg-card rounded-2xl border border-border card-hover"
+                className="group flex flex-col h-full p-8 bg-card rounded-2xl border border-border transition-all duration-300 hover:bg-primary hover:border-primary hover:-translate-y-2 hover:shadow-xl"
               >
-                <span className="inline-block self-start px-3 py-1 mb-4 text-xs font-medium tracking-wider uppercase bg-muted text-muted-foreground rounded-full">
+                <span className="inline-block self-start px-3 py-1 mb-4 text-xs font-medium tracking-wider uppercase bg-muted text-muted-foreground rounded-full group-hover:bg-white/10 group-hover:text-white transition-colors">
                   {item.type}
                 </span>
 
-                <h4 className="font-serif text-xl mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                <h4 className="font-serif text-xl md:text-2xl font-bold mb-3 text-primary group-hover:text-white transition-colors line-clamp-2">
                   {item.title}
                 </h4>
 
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
+                <p className="text-muted-foreground text-base mb-6 line-clamp-3 flex-grow group-hover:text-white/80 transition-colors">
                   {item.description}
                 </p>
 
                 {(item.date || item.location) && (
-                  <div className="flex flex-wrap gap-4 text-xs text-muted-foreground mt-auto pt-4 border-t border-border">
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mt-auto pt-4 border-t border-border group-hover:border-white/20 group-hover:text-white/70 transition-colors">
                     {item.date && (
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-4 h-4" />
                         {item.date}
                       </span>
                     )}
                     {item.location && (
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4" />
                         {item.location}
                       </span>
                     )}

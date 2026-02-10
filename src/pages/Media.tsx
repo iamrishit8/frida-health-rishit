@@ -1,36 +1,56 @@
+import { useEffect } from "react";
+import { ArrowRight, Newspaper, Video, Mic } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
 
-const Featured = () => {
-  const items = [
-    { title: "Op-Ed: The Hindu", desc: "Why rural health needs a digital overhaul.", link: "#" },
-    { title: "Interview: Sansad TV", desc: "Discussing the new health budget with our Director.", link: "#" },
-    { title: "Podcast: Policy Matters", desc: "Episode 4: Women's Leadership in Health.", link: "#" },
-    { title: "Feature: The Wire", desc: "Tracking the impact of our pilot programs.", link: "#" },
+const Media = () => {
+  useEffect(() => {
+    document.title = "Featured | FRIDA";
+  }, []);
+
+  const newsItems = [
+    { type: "Press Release", date: "Jan 28, 2025", title: "FRIDA releases annual State of Health report", source: "The Hindu", icon: Newspaper },
+    { type: "Interview", date: "Jan 15, 2025", title: "Dr. Anita Sharma on the future of Digital Health IDs", source: "NDTV", icon: Video },
+    { type: "Podcast", date: "Dec 10, 2024", title: "Understanding Rural Health Dynamics", source: "Spotify", icon: Mic },
   ];
 
   return (
     <div className="pt-20 min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-serif font-bold text-primary mb-12">Featured in Media</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {items.map((item, i) => (
-             <a key={i} href={item.link} className="block group">
-               <div className="border border-primary/10 rounded-lg p-8 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm h-full flex flex-col justify-between">
-                 <div>
-                    <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
-                    <p className="opacity-80 mb-6">{item.desc}</p>
-                 </div>
-                 <div className="flex items-center gap-2 font-medium opacity-60 group-hover:opacity-100">
-                    Read More <ExternalLink size={16} />
-                 </div>
-               </div>
-             </a>
-           ))}
+      {/* STANDARD HERO SECTION */}
+      <div className="bg-primary/5 py-20 md:py-28">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Featured & Media</h1>
+          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
+            Our work in the news, press releases, and publications.
+          </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 max-w-5xl">
+         <div className="grid gap-6">
+            {newsItems.map((item, index) => (
+               <div key={index} className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8 bg-white border border-primary/10 rounded-xl hover:shadow-lg transition-all group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                     <item.icon size={24} />
+                  </div>
+                  <div className="flex-grow">
+                     <div className="flex gap-3 text-sm text-foreground/60 mb-2">
+                        <span className="font-semibold text-primary">{item.source}</span>
+                        <span>•</span>
+                        <span>{item.date}</span>
+                     </div>
+                     <h3 className="text-xl md:text-2xl font-serif font-bold text-primary group-hover:text-primary/80 transition-colors">
+                        {item.title}
+                     </h3>
+                  </div>
+                  <Link to="#" className="text-primary font-medium flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                     Read <ArrowRight size={16} />
+                  </Link>
+               </div>
+            ))}
+         </div>
       </div>
     </div>
   );
 };
 
-export default Featured;
+export default Media;

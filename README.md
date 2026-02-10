@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# FRIDA — Fostering Research, Impact, Development & Advocacy
 
-## Project info
+FRIDA is a health policy think tank based in New Delhi.  
+This repository contains the source code for the official **FRIDA Health** website.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The website functions as a public-facing platform to present FRIDA’s research, policy engagement, and advocacy work—bridging rigorous evidence with legislative and institutional action.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Project Overview
 
-**Use Lovable**
+The FRIDA website is designed to support both public communication and policy outreach. Core objectives include:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Research Repository**  
+  A structured library of policy briefs, reports, and commentaries with gated PDF downloads for lead capture.
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Advocacy & Campaigns**  
+  Dedicated sections highlighting ongoing initiatives aimed at influencing health policy and governance.
 
-**Use your preferred IDE**
+- **Parliamentary Forum**  
+  Visualizations and dashboards showcasing legislative engagement, consultations, and policy dialogue.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Events & Media**  
+  Coverage of summits, roundtables, workshops, and press mentions.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Framework:** React (via Vite)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Icons:** Lucide React
+- **Animations:** Framer Motion
+- **Routing:** React Router
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Follow the steps below to run the project locally.
 
-**Edit a file directly in GitHub**
+### Prerequisites
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Node.js (LTS recommended)
+- npm
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Clone the repository**
+   git clone <YOUR_GIT_URL>
+   cd frida-health-rishit
 
-## What technologies are used for this project?
+2. **Install dependencies**
+   npm install
 
-This project is built with:
+3. **Run the development server**
+   npm run dev
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Build for production**
+   npm run build
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Project Structure
+src/
+├── components/   # Reusable UI components (Navbar, Footer, shadcn primitives)
+├── pages/        # Route-level pages (Home, About, Research, Advocacy, etc.)
+├── lib/          # Shared utilities and configuration
+└── assets/       # Static assets
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Notes on Research Downloads
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* Research PDFs are served from the `public/` directory.
+* Downloads are gated using a Google Form submission captured via a hidden iframe.
+* User details are collected before triggering the file download to support outreach and analytics.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## Contact
+
+For development-related queries or contributions, please contact the repository owner.
+
+---

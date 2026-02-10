@@ -21,6 +21,7 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  // Updated navLinks: Removed Contact, added Events
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -30,7 +31,7 @@ const Navbar = () => {
     { name: "Community", path: "/community" },
     { name: "Impact", path: "/impact" },
     { name: "Featured", path: "/featured" },
-    { name: "Contact", path: "/contact" },
+    { name: "Events", path: "/events" }, 
   ];
 
   return (
@@ -44,12 +45,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo Section */}
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
-            {/* Logo Image */}
             <img 
                src="/logo.png" 
                alt="FRIDA Logo" 
                className="h-10 w-auto transition-transform group-hover:scale-105"
-               onError={(e) => { e.currentTarget.style.display = 'none'; }} // Hide image if not found, fallback to text
+               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
             <span className="text-2xl font-serif font-bold text-primary tracking-tight group-hover:opacity-80 transition-opacity">
               FRIDA
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary hover:text-primary/80 focus:outline-none transition-colors"
+              className="text-primary p-2 hover:bg-primary/5 rounded-md transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -85,14 +85,14 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="xl:hidden absolute top-20 left-0 w-full bg-white border-b border-primary/10 shadow-lg animate-fade-in-up">
-          <div className="px-4 pt-2 pb-6 space-y-2">
+        <div className="xl:hidden absolute top-20 left-0 w-full bg-white border-b border-primary/10 shadow-lg animate-fade-in-up h-[calc(100vh-5rem)] overflow-y-auto">
+          <div className="px-4 pt-4 pb-8 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "block px-4 py-3 text-base font-medium rounded-md transition-colors",
+                  "block px-4 py-4 text-lg font-medium rounded-lg transition-colors border-b border-dashed border-primary/10 last:border-0",
                   location.pathname === link.path
                     ? "bg-primary/5 text-primary font-bold"
                     : "text-foreground/80 hover:bg-primary/5 hover:text-primary"

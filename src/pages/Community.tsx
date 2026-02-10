@@ -1,47 +1,50 @@
-import { Camera } from "lucide-react";
+import { useEffect } from "react";
+import { Users, HandHeart } from "lucide-react";
 
 const Community = () => {
+  useEffect(() => {
+    document.title = "Community | FRIDA";
+  }, []);
+
   return (
     <div className="pt-20 min-h-screen bg-white">
-      <div className="bg-primary/5 py-16">
-        <div className="container mx-auto px-4 text-center">
-           <h1 className="text-4xl font-serif font-bold text-primary mb-6">Community Engagement</h1>
-           <p className="text-lg max-w-2xl mx-auto text-foreground/70">
-             Building trust and capacity through pilot interventions and participatory research.
-           </p>
+      {/* STANDARD HERO SECTION */}
+      <div className="bg-primary/5 py-20 md:py-28">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Community Engagement</h1>
+          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
+            Building sustainable health solutions by putting the community at the center of the conversation.
+          </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 space-y-20">
-         {/* Pilot Intervention */}
-         <div>
-            <h2 className="text-3xl font-serif font-bold text-primary mb-8 border-b border-primary/10 pb-4">Pilot Interventions</h2>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-               <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center text-gray-400">
-                  <Camera size={48} />
+      <div className="container mx-auto px-4 py-16 max-w-6xl">
+         <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                  <Users size={32} />
                </div>
-               <div>
-                  <h3 className="text-2xl font-bold mb-4">Maternal Health Camps</h3>
-                  <p className="text-foreground/70 leading-relaxed mb-4">
-                     Our pilot program in rural Bihar focused on reducing maternal mortality by creating awareness about antenatal care. Through a series of 12 health camps, we connected over 500 women with local public health facilities.
-                  </p>
-                  <p className="text-foreground/70 leading-relaxed">
-                     The data gathered from these camps is now informing state-level guidelines on last-mile health delivery.
-                  </p>
+               <h2 className="text-3xl font-serif font-bold text-primary">Grassroots Leadership</h2>
+               <p className="text-lg text-foreground/70 leading-relaxed">
+                  We identify and train local community leaders, known as 'Swasthya Sahelis', who act as the first point of contact for health information and advocacy within their villages.
+               </p>
+            </div>
+            <div className="space-y-6">
+               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                  <HandHeart size={32} />
                </div>
+               <h2 className="text-3xl font-serif font-bold text-primary">Participatory Action</h2>
+               <p className="text-lg text-foreground/70 leading-relaxed">
+                  Our programs are not just delivered to the community; they are designed by them. We hold monthly 'Jan Sunwais' (Public Hearings) to understand evolving health challenges.
+               </p>
             </div>
          </div>
-
-         {/* Fieldwork Photos Grid */}
-         <div>
-            <h2 className="text-3xl font-serif font-bold text-primary mb-8 border-b border-primary/10 pb-4">Voices from the Field</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-               {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="bg-primary/5 aspect-square rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center text-primary/20">
-                     <span className="text-xs">Photo {i}</span>
-                  </div>
-               ))}
-            </div>
+         
+         <div className="mt-20 rounded-3xl overflow-hidden h-[400px] relative shadow-xl">
+             <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=1600" alt="Community gathering" className="w-full h-full object-cover" />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12">
+                <h3 className="text-3xl md:text-4xl font-serif font-bold text-white">Empowering 50+ Villages Across India</h3>
+             </div>
          </div>
       </div>
     </div>
