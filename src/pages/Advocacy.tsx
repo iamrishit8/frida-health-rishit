@@ -1,76 +1,120 @@
 import { useEffect } from "react";
 
+const policyImages = [
+  "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1603201667230-bd139210db18?auto=format&fit=crop&q=80&w=1200",
+];
+
+const communityImages = [
+  "https://images.unsplash.com/photo-1593113598332-cd59a93ad5a5?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1596079890744-2c5af4120ebc?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&q=80&w=1200",
+];
+
 const Advocacy = () => {
   useEffect(() => {
     document.title = "Advocacy | FRIDA";
   }, []);
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* STANDARD HERO SECTION */}
-      <div className="bg-primary/5 py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Advocacy</h1>
-          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
-            Translating evidence into action. We work to influence policy and empower communities to demand their health rights.
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16 max-w-6xl space-y-24">
-        
-        {/* Policy Advocacy */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-xl h-[300px] md:h-[400px]">
-             <img 
-               src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&q=80&w=800" 
-               alt="Policy Advocacy" 
-               className="w-full h-full object-cover"
-             />
-             <div className="absolute inset-0 bg-primary/10"></div>
-          </div>
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">Policy Advocacy</h2>
-            <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
-              We engage directly with policymakers, legislators, and bureaucrats to draft, review, and refine health policies. By providing technical expertise and data-backed recommendations, we ensure that laws serve the most vulnerable.
+    <div className="min-h-screen bg-white">
+      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+        <div className="section-container">
+          <div className="mx-auto max-w-5xl text-center">
+            <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Advocacy</h1>
+            <p className="mb-4 text-lg leading-relaxed text-foreground/75 md:text-xl">
+              Frida advances women's health by bridging the gap between policy discourse and community-grounded insights.
+            </p>
+            <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
+              We bring to policy makers research, data, knowledge as well as stories, and lived realities of women and girls across India. We believe women's health policy must be evidence-based, community-informed, and shaped by those it affects most.
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Community Advocacy */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-1">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">Community Advocacy</h2>
-            <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
-              Real change happens from the ground up. We train community leaders to identify local health gaps and articulate their needs in decision-making forums, fostering a culture of accountability and civic participation.
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="mb-10 rounded-3xl border border-primary/10 bg-primary/5 p-6 text-center md:p-8">
+            <p className="text-lg font-medium leading-relaxed text-foreground/80 md:text-xl">
+              Our advocacy works on two fronts: inside the halls of policy, and within the communities we serve.
             </p>
           </div>
-          <div className="order-2 relative rounded-2xl overflow-hidden shadow-xl h-[300px] md:h-[400px]">
-             <img 
-               src="https://images.unsplash.com/photo-1596079890744-2c5af4120ebc?auto=format&fit=crop&q=80&w=800" 
-               alt="Community Advocacy" 
-               className="w-full h-full object-cover"
-             />
-             <div className="absolute inset-0 bg-primary/10"></div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+              <h2 className="mb-4 text-3xl font-bold text-primary">Policy Advocacy</h2>
+              <p className="mb-6 text-foreground/75">
+                Influencing the systems that shape women's health. We engage directly with policymakers, government bodies, and institutional stakeholders to ensure that women's health agendas are grounded in rigorous evidence and real-world experience.
+              </p>
+              <p className="text-foreground/75">
+                From equipping Parliamentarians with research, shaping drafting of policies and Bills, to building coalitions and partnerships, we work to make policy more responsive, inclusive, and effective.
+              </p>
+              <div className="mt-7 grid grid-cols-3 gap-3">
+                {policyImages.map((image, index) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={`Policy advocacy ${index + 1}`}
+                    className="h-24 w-full rounded-xl object-cover md:h-28"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+              <h2 className="mb-4 text-3xl font-bold text-primary">Community Advocacy</h2>
+              <p className="mb-6 text-foreground/75">
+                Building awareness, shifting norms. We work with communities, civil society, and the wider public to raise awareness, shift norms, enable behaviour change, and build collective demand for better women's health.
+              </p>
+              <p className="text-foreground/75">
+                Policy change is only meaningful and effective when it translates to the ground, amidst communities.
+              </p>
+              <div className="mt-7 grid grid-cols-3 gap-3">
+                {communityImages.map((image, index) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={`Community advocacy ${index + 1}`}
+                    className="h-24 w-full rounded-xl object-cover md:h-28"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ))}
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        {/* Campaigns */}
-        <div className="bg-primary/5 p-8 md:p-16 rounded-3xl">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-12 text-center">Current Campaigns</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-md border border-primary/10 hover:shadow-lg transition-all">
-              <h3 className="text-2xl font-bold mb-4 text-primary">#HealthForAll</h3>
-              <p className="text-lg text-foreground/70 leading-relaxed">A nationwide campaign demanding universal health coverage provisions in the upcoming fiscal budget.</p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-md border border-primary/10 hover:shadow-lg transition-all">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Digital Dignity</h3>
-              <p className="text-lg text-foreground/70 leading-relaxed">Ensuring data privacy and equitable access in the rollout of national digital health IDs.</p>
-            </div>
+      <section className="section-padding bg-primary/5">
+        <div className="section-container">
+          <h2 className="mb-10 text-center text-4xl font-bold text-primary">Campaigns</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Policy to Practice",
+                text: "Turning evidence into actionable public commitments for women's health outcomes across states.",
+              },
+              {
+                title: "Health Equity Dialogues",
+                text: "Public dialogues that connect researchers, communities, and institutions around pressing women's health priorities.",
+              },
+              {
+                title: "Evidence for Action",
+                text: "Bringing data, stories, and lived realities into policy conversations that shape inclusive health systems.",
+              },
+            ].map((campaign) => (
+              <article key={campaign.title} className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
+                <h3 className="mb-3 text-2xl font-bold text-primary">{campaign.title}</h3>
+                <p className="text-foreground/75">{campaign.text}</p>
+              </article>
+            ))}
           </div>
         </div>
-
-      </div>
+      </section>
     </div>
   );
 };

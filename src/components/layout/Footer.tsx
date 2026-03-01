@@ -70,6 +70,18 @@ const Footer = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
              </div>
+
+             <form className="mt-6 flex gap-2">
+               <input
+                 type="email"
+                 required
+                 placeholder="Email for updates"
+                 className="w-full rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
+               />
+               <button type="submit" className="rounded-full bg-white px-4 py-2 text-sm font-medium text-primary hover:bg-white/90">
+                 Join
+               </button>
+             </form>
           </div>
 
         </div>
@@ -77,8 +89,8 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-light">
           <p>&copy; {new Date().getFullYear()} FRIDA Health Hub. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link to={LINKEDIN_URL} className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to={LINKEDIN_URL} className="hover:text-white transition-colors">Terms of Service</Link>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

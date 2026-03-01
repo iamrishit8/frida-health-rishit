@@ -4,52 +4,65 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-primary/5">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section className="hero-shell relative min-h-[92vh] overflow-hidden">
+      <div className="absolute inset-0">
         <img
-          src="/hero-women-community.jpg" 
-          alt="Community Impact"
-          className="w-full h-full object-cover opacity-90" 
+          src="/hero-women-community.jpg"
+          alt="Women and girls in community health settings"
+          className="h-full w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
         />
-        {/* REDUCED TRANSPARENCY: Changed from primary/90 to primary/70 and primary/40 to primary/20 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/20 mix-blend-multiply" />
+        <div className="hero-overlay animate-hero-shift absolute inset-0" />
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-        <div className="max-w-3xl animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-white border border-white/30 rounded-full uppercase bg-white/10 backdrop-blur-sm">
-            Fostering Research, Impact, Development & Advocacy
-          </span>
-          
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-6 drop-shadow-lg">
-            Bridging Policy <br className="hidden sm:block" /> with People's Reality
-          </h1>
-          
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light max-w-2xl drop-shadow-md">
-            We are a think-tank and advocacy group dedicated to transforming health outcomes through evidence-based research and community-led action.
+      <div className="section-container relative z-10 flex min-h-[92vh] items-center py-16">
+        <div className="max-w-5xl animate-fade-in-up">
+          <p className="mb-7 inline-flex rounded-full border border-white/35 bg-white/10 px-5 py-2 text-xs uppercase tracking-[0.24em] text-white backdrop-blur md:text-sm">
+            Healthy and resilient futures for women and girls
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4">
+
+          <h1 className="text-balance mb-7 max-w-5xl text-4xl font-bold leading-[1.02] text-white drop-shadow md:text-6xl lg:text-7xl">
+            Advancing women's health through research, action, and systems change.
+          </h1>
+
+          <div className="mb-9 max-w-4xl space-y-3 text-white/95 drop-shadow-[0_2px_24px_rgba(0,0,0,0.3)]">
+            <p className="text-lg leading-relaxed md:text-xl">
+              By strengthening knowledge, care, and systems around women and girls, we create change that reaches families, communities, and future generations.
+            </p>
+            <p className="text-lg leading-relaxed md:text-xl">
+              Advancing women's health through research, action, and systems change.
+            </p>
+            <p className="text-lg leading-relaxed md:text-xl">
+              Building evidence-driven solutions that strengthen lives, families, and futures.
+            </p>
+          </div>
+
+          <div className="mb-10 flex flex-wrap gap-3 text-xs uppercase tracking-widest text-white/90 md:text-sm">
+            <span className="animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Research</span>
+            <span className="animation-delay-200 animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Advocacy</span>
+            <span className="animation-delay-300 animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Community Engagement</span>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Link to="/about">
-              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 h-auto font-bold rounded-sm w-full sm:w-auto backdrop-blur-sm transition-all">
-                What We Do
+              <Button size="lg" className="h-auto rounded-full bg-white px-8 py-4 text-base font-semibold text-primary hover:bg-white/90">
+                Learn About FRIDA
               </Button>
             </Link>
-            <Link to="/impact">
-              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 h-auto font-bold rounded-sm w-full sm:w-auto backdrop-blur-sm transition-all">
-                Our Impact <ArrowRight className="ml-2 w-5 h-5" />
+            <Link to="/research">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-auto rounded-full border-2 border-white bg-transparent px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-primary"
+              >
+                Explore Research <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
         </div>
       </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce hidden md:block">
-        <div className="w-0.5 h-16 bg-gradient-to-b from-transparent via-white to-transparent opacity-50"></div>
-      </div>
-    </div>
+    </section>
   );
 };
 

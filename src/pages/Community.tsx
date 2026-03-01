@@ -1,52 +1,92 @@
 import { useEffect } from "react";
-import { Users, HandHeart } from "lucide-react";
+import { CloudSun, Droplets, ClipboardList } from "lucide-react";
 
 const Community = () => {
   useEffect(() => {
-    document.title = "Community | FRIDA";
+    document.title = "Community Engagement | FRIDA";
   }, []);
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* STANDARD HERO SECTION */}
-      <div className="bg-primary/5 py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Community Engagement</h1>
-          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
-            Building sustainable health solutions by putting the community at the center of the conversation.
+    <div className="min-h-screen bg-white">
+      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+        <div className="section-container text-center">
+          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Community Engagement</h1>
+          <p className="mx-auto max-w-5xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+            We partner with women, girls, and local communities to understand how health challenges are experienced in everyday life. Through collaboration, education, field research, and participatory learning, we turn shared knowledge into practical action and policy recommendations that strengthen agency and awareness.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
-         <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  <Users size={32} />
-               </div>
-               <h2 className="text-3xl font-serif font-bold text-primary">Grassroots Leadership</h2>
-               <p className="text-lg text-foreground/70 leading-relaxed">
-                  We identify and train local community leaders, known as 'Swasthya Sahelis', who act as the first point of contact for health information and advocacy within their villages.
-               </p>
-            </div>
-            <div className="space-y-6">
-               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  <HandHeart size={32} />
-               </div>
-               <h2 className="text-3xl font-serif font-bold text-primary">Participatory Action</h2>
-               <p className="text-lg text-foreground/70 leading-relaxed">
-                  Our programs are not just delivered to the community; they are designed by them. We hold monthly 'Jan Sunwais' (Public Hearings) to understand evolving health challenges.
-               </p>
-            </div>
-         </div>
-         
-         <div className="mt-20 rounded-3xl overflow-hidden h-[400px] relative shadow-xl">
-             <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=1600" alt="Community gathering" className="w-full h-full object-cover" />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12">
-                <h3 className="text-3xl md:text-4xl font-serif font-bold text-white">Empowering 50+ Villages Across India</h3>
-             </div>
-         </div>
-      </div>
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <h2 className="mb-10 text-center text-4xl font-bold text-primary">Community Engagement Initiatives</h2>
+
+          <div className="space-y-6">
+            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
+              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+                <img
+                  src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&q=80&w=1200"
+                  alt="Gendered climate impacts"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
+                  <CloudSun className="h-5 w-5" />
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-primary">Gendered Impacts of Climate</h3>
+                <p className="text-foreground/75">
+                  A community-based field interviews documenting how climate stress affects women's health, safety, and daily responsibilities. This work centers lived experiences to inform more responsive local and regional health strategies.
+                </p>
+              </div>
+            </article>
+
+            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
+              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+                <img
+                  src="https://images.unsplash.com/photo-1516589091380-5d60138dbf5d?auto=format&fit=crop&q=80&w=1200"
+                  alt="Menstrual health education"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
+                  <Droplets className="h-5 w-5" />
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-primary">Menstrual Health Education</h3>
+                <p className="text-foreground/75">
+                  Interactive education programs that build bodily literacy, reduce stigma, and support informed menstrual care. These sessions equip adolescents and women with practical knowledge while creating safe spaces for open conversation.
+                </p>
+              </div>
+            </article>
+
+            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
+              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
+                  alt="Community surveys"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
+                  <ClipboardList className="h-5 w-5" />
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-primary">Community Surveys & Listening Initiatives</h3>
+                <p className="text-foreground/75">
+                  Ongoing surveys and participatory assessments that capture women's health needs directly from communities. These insights shape our research priorities and ensure our work reflects real experiences rather than assumptions.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

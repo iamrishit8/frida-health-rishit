@@ -6,47 +6,59 @@ import Partners from "@/components/home/Partners";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
+import Reveal from "@/components/ui/Reveal";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "FRIDA | Women's Health Advocacy Lab";
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Hero />
       <ImpactNumbers />
       <WhatWeDo />
       <AreasOfWork />
-      
-      {/* Partners Section - Moved Here */}
       <Partners />
-      
-      {/* Parliamentary Forum Teaser */}
-      <section className="section-padding bg-primary/5">
+
+      <section className="section-padding bg-gradient-to-b from-white to-primary/5">
         <div className="section-container">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Parliamentary Forum</h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                A non-partisan platform bringing together Members of Parliament from across the political spectrum to champion health equity and policy reform.
-              </p>
-              <ul className="space-y-2 text-foreground/70">
-                <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-primary" /> 10 MPs from 7 Parties</li>
-                <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-primary" /> Representation from 6 States</li>
-                <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-primary" /> Focus on Data-Driven Policy</li>
-              </ul>
-              <Link to="/parliamentary-forum">
-                <Button className="mt-4 bg-primary text-white hover:bg-primary/90">
-                  Explore the Forum <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
+          <Reveal>
+            <div className="grid items-center gap-10 rounded-3xl border border-primary/10 bg-white p-6 shadow-xl shadow-primary/10 md:grid-cols-2 md:p-10">
+              <div className="relative h-[340px] overflow-hidden rounded-2xl ring-1 ring-primary/10 md:h-[420px]">
+                <img
+                  src="/hero-women-community.jpg"
+                  alt="Parliamentarians Forum on Women's Health"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-primary/20 to-transparent" />
+              </div>
+
+              <div>
+                <p className="mb-3 text-sm uppercase tracking-[0.25em] text-primary/70">Featured Initiative</p>
+                <h2 className="mb-5 text-3xl font-bold text-primary md:text-4xl">
+                  Parliamentarians' Forum on Women's Health
+                </h2>
+                <p className="mb-7 text-lg leading-relaxed text-foreground/75">
+                  Built India's Parliamentarians' Forum on Women's Health, a cross-party network of legislators committed to prioritise women's health and well being.
+                </p>
+                <div className="mb-7 flex flex-wrap gap-2 text-xs uppercase tracking-wider text-primary/80">
+                  <span className="rounded-full bg-primary/10 px-3 py-1">Cross-party</span>
+                  <span className="rounded-full bg-primary/10 px-3 py-1">Legislative network</span>
+                  <span className="rounded-full bg-primary/10 px-3 py-1">Women's health focus</span>
+                </div>
+
+                <Link to="/parliamentary-forum">
+                  <Button className="rounded-full bg-primary px-6 text-white hover:bg-primary/90">
+                    Explore the Forum <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="flex-1 w-full relative h-[400px] bg-white rounded-lg shadow-xl border border-primary/10 p-8 flex items-center justify-center overflow-hidden">
-               {/* Abstract Map Visual for Teaser */}
-               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
-               <div className="text-center">
-                  <span className="text-9xl font-serif text-primary/20 font-bold block">INDIA</span>
-                  <span className="text-sm uppercase tracking-[0.3em] text-primary/60">Policy Map</span>
-               </div>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

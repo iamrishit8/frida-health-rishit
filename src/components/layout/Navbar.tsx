@@ -28,10 +28,11 @@ const Navbar = () => {
     { name: "Research", path: "/research" },
     { name: "Advocacy", path: "/advocacy" },
     { name: "Parliamentary Forum", path: "/parliamentary-forum" },
-    { name: "Community", path: "/community" },
+    { name: "Community Engagement", path: "/community" },
     { name: "Impact", path: "/impact" },
     { name: "Featured", path: "/featured" },
-    { name: "Events", path: "/events" }, 
+    { name: "Events", path: "/events" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (

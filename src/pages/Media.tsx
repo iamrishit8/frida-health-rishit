@@ -1,54 +1,70 @@
 import { useEffect } from "react";
-import { ArrowRight, Newspaper, Video, Mic } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUpRight, Newspaper, Podcast, Video } from "lucide-react";
+
+const features = [
+  {
+    type: "Press Release",
+    date: "December 2025",
+    title: "Frida launches Parliamentarians' Forum on Women's Health",
+    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    icon: Newspaper,
+  },
+  {
+    type: "Interview",
+    date: "October 2025",
+    title: "Digital safety, SRHR access, and policy conversations in India",
+    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    icon: Video,
+  },
+  {
+    type: "Podcast",
+    date: "May 2025",
+    title: "Community narratives and feminist health futures",
+    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    icon: Podcast,
+  },
+];
 
 const Media = () => {
   useEffect(() => {
     document.title = "Featured | FRIDA";
   }, []);
 
-  const newsItems = [
-    { type: "Press Release", date: "Jan 28, 2025", title: "FRIDA releases annual State of Health report", source: "The Hindu", icon: Newspaper },
-    { type: "Interview", date: "Jan 15, 2025", title: "Dr. Anita Sharma on the future of Digital Health IDs", source: "NDTV", icon: Video },
-    { type: "Podcast", date: "Dec 10, 2024", title: "Understanding Rural Health Dynamics", source: "Spotify", icon: Mic },
-  ];
-
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* STANDARD HERO SECTION */}
-      <div className="bg-primary/5 py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Featured & Media</h1>
-          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
-            Our work in the news, press releases, and publications.
+    <div className="min-h-screen bg-white">
+      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+        <div className="section-container text-center">
+          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Featured & Media</h1>
+          <p className="mx-auto max-w-4xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+            A curated snapshot of Frida in media, public conversations, and featured external platforms.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
-         <div className="grid gap-6">
-            {newsItems.map((item, index) => (
-               <div key={index} className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8 bg-white border border-primary/10 rounded-xl hover:shadow-lg transition-all group">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
-                     <item.icon size={24} />
-                  </div>
-                  <div className="flex-grow">
-                     <div className="flex gap-3 text-sm text-foreground/60 mb-2">
-                        <span className="font-semibold text-primary">{item.source}</span>
-                        <span>•</span>
-                        <span>{item.date}</span>
-                     </div>
-                     <h3 className="text-xl md:text-2xl font-serif font-bold text-primary group-hover:text-primary/80 transition-colors">
-                        {item.title}
-                     </h3>
-                  </div>
-                  <Link to="#" className="text-primary font-medium flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                     Read <ArrowRight size={16} />
-                  </Link>
-               </div>
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs uppercase tracking-wider text-primary">{item.type}</span>
+                  <item.icon className="h-5 w-5 text-primary/50" />
+                </div>
+                <p className="mb-2 text-xs uppercase tracking-widest text-foreground/55">{item.date}</p>
+                <h2 className="mb-5 text-2xl font-bold text-primary">{item.title}</h2>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-medium text-primary hover:text-primary/80"
+                >
+                  Open Link <ArrowUpRight className="ml-2 h-4 w-4" />
+                </a>
+              </article>
             ))}
-         </div>
-      </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

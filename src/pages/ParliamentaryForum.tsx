@@ -1,5 +1,36 @@
-import { Badge } from "@/components/ui/badge";
 import { useEffect } from "react";
+import { Handshake, BookOpenCheck, ShieldCheck, Users, Landmark, MapPinned } from "lucide-react";
+
+const STATES = ["Maharashtra", "Telangana", "Andhra Pradesh", "Tamil Nadu", "Odisha", "Assam"];
+
+const members = [
+  "KR Suresh Reddy — Rajya Sabha MP, Telangana (BRS)",
+  "Dr. Maddila Gurumoorthy — Lok Sabha MP, Andhra Pradesh (YSRCP)",
+  "Vishal Patil — Lok Sabha MP, Maharashtra (Swabhimani Paksha)",
+  "Dr. Fauzia Khan — Rajya Sabha MP, Maharashtra (NCP-SP)",
+  "Pradyut Bordoloi — Lok Sabha MP, Assam (INC)",
+  "Dr. T Sumathy — Lok Sabha MP, Tamil Nadu (DMK)",
+  "Sulata Deo — Rajya Sabha MP, Odisha (BJD)",
+  "Jothimani S. — Lok Sabha MP, Tamil Nadu (INC)",
+];
+
+const objectives = [
+  {
+    title: "Facilitating Dialogue and Collaboration",
+    description: "Among Parliamentarians across political parties.",
+    icon: Handshake,
+  },
+  {
+    title: "Enabling Knowledge Exchange and Evidence-Based Policymaking",
+    description: "Through practical policy engagement and research grounding.",
+    icon: BookOpenCheck,
+  },
+  {
+    title: "Driving Policy Action and Accountability",
+    description: "To sustain women's health as a national policy priority.",
+    icon: ShieldCheck,
+  },
+];
 
 const ParliamentaryForum = () => {
   useEffect(() => {
@@ -7,93 +38,107 @@ const ParliamentaryForum = () => {
   }, []);
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* STANDARD HERO SECTION */}
-      <div className="bg-primary/5 py-20 md:py-28">
-         <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6">Parliamentary Forum on Health</h1>
-            <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
-              A cross-party platform for Members of Parliament to deliberate, learn, and lead on critical health issues facing the nation.
-            </p>
-         </div>
-      </div>
-
-      {/* About the Forum */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl space-y-8 text-lg md:text-xl text-foreground/80 leading-relaxed">
-          <h2 className="text-3xl font-serif font-bold text-primary mb-6">About the Forum</h2>
-          <p>
-            The Parliamentary Forum on Health (PFH) serves as a vital bridge between scientific evidence and legislative action. In an era where health challenges are becoming increasingly complex—ranging from pandemics to climate-induced health risks—legislators require access to real-time, verified data to make informed decisions.
-          </p>
-          <p>
-            Established in 2023, the Forum operates on a non-partisan basis, bringing together MPs from across the political spectrum. We facilitate roundtables, expert briefings, and field visits, enabling representatives to witness firsthand the challenges faced by the healthcare system and the communities they serve.
+    <div className="min-h-screen bg-white">
+      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+        <div className="section-container text-center">
+          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Parliamentarians' Forum on Women's Health</h1>
+          <p className="mx-auto max-w-5xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+            In 2025, Frida launched India's first-ever Parliamentarians' Forum on Women's Health, bringing together Members of Parliament across party lines to make women's health a consistent policy priority.
           </p>
         </div>
       </section>
 
-      {/* Map & Stats */}
-      <section className="py-12 md:py-20 bg-white overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="relative bg-primary text-white rounded-3xl p-8 md:p-16 overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="rounded-3xl bg-primary p-7 text-white shadow-xl md:p-9">
+              <Users className="mb-4 h-8 w-8" />
+              <p className="mb-1 text-5xl font-bold">10</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-white/75">MPs</p>
+            </article>
+            <article className="rounded-3xl bg-primary p-7 text-white shadow-xl md:p-9">
+              <Landmark className="mb-4 h-8 w-8" />
+              <p className="mb-1 text-5xl font-bold">7</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-white/75">Political Parties</p>
+            </article>
+            <article className="rounded-3xl bg-primary p-7 text-white shadow-xl md:p-9">
+              <MapPinned className="mb-4 h-8 w-8" />
+              <p className="mb-1 text-5xl font-bold">6</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-white/75">States</p>
+            </article>
+          </div>
 
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-serif font-bold mb-8 border-l-4 border-white pl-4">Our Footprint</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-white/20 transition-all cursor-default border border-white/10">
-                      <span className="block text-5xl md:text-6xl font-bold mb-2">10</span>
-                      <span className="text-sm uppercase tracking-widest opacity-80">MPs Engaged</span>
-                   </div>
-                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-white/20 transition-all cursor-default border border-white/10">
-                      <span className="block text-5xl md:text-6xl font-bold mb-2">7</span>
-                      <span className="text-sm uppercase tracking-widest opacity-80">Political Parties</span>
-                   </div>
-                   <div className="sm:col-span-2 bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-white/20 transition-all cursor-default border border-white/10">
-                      <span className="block text-5xl md:text-6xl font-bold mb-2">6</span>
-                      <span className="text-sm uppercase tracking-widest opacity-80">States Covered</span>
-                   </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center min-h-[300px] md:min-h-[400px] relative mt-8 lg:mt-0">
-                 <div className="w-full h-full border-2 border-white/20 rounded-2xl relative flex items-center justify-center bg-white/5 backdrop-blur-sm p-8">
-                    <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                       <span className="text-6xl md:text-[10rem] font-serif font-bold tracking-widest">INDIA</span>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center relative z-10">
-                       {['Maharashtra', 'Bihar', 'Odisha', 'Rajasthan', 'Uttar Pradesh', 'Assam'].map((state, i) => (
-                          <div key={i} className="flex flex-col items-center gap-2 group cursor-pointer">
-                             <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white group-hover:scale-150 transition-transform shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
-                             <span className="text-sm md:text-base font-medium opacity-70 group-hover:opacity-100">{state}</span>
-                          </div>
-                       ))}
-                    </div>
-                 </div>
-              </div>
-            </div>
+          <div className="mt-10 rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
+            <h2 className="mb-5 text-3xl font-bold text-primary">Context</h2>
+            <p className="text-foreground/75">
+              Women's health remains globally underprioritized, often overshadowed by broader health and economic agendas, despite its foundational role in social well-being and development index. This persistent neglect underscores the urgent need for greater political will and policy prioritisation. Parliamentary forums are a great way to build cross-party consensus and momentum to elevate women's health as a national policy priority.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Members */}
-      <section className="py-16 container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-12 text-center">Forum Members</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-           {[1, 2, 3, 4, 5, 6].map((i) => (
-             <div key={i} className="bg-white border border-primary/10 p-6 rounded-xl flex items-center gap-4 hover:shadow-lg transition-all hover:border-primary/30">
-               <div className="w-16 h-16 bg-primary/10 rounded-full flex-shrink-0 flex items-center justify-center text-primary font-bold">
-                 MP
-               </div>
-               <div>
-                 <h4 className="font-bold text-lg text-primary">Hon. Member Name</h4>
-                 <p className="text-base text-foreground/60">Constituency {i}</p>
-                 <Badge variant="secondary" className="mt-2 text-xs bg-primary/5 text-primary hover:bg-primary/10 border-primary/10">Party Name</Badge>
-               </div>
-             </div>
-           ))}
+      <section className="section-padding bg-primary/5">
+        <div className="section-container">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr]">
+            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+              <h2 className="mb-4 text-3xl font-bold text-primary">Mission</h2>
+              <p className="text-xl text-foreground/80">Making women's health a policy priority, backed by political will and consensus.</p>
+
+              <h3 className="mb-5 mt-10 text-2xl font-bold text-primary">Objectives</h3>
+              <div className="space-y-4">
+                {objectives.map((item) => (
+                  <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-primary/10 p-4">
+                    <div className="rounded-full bg-primary/10 p-2 text-primary">
+                      <item.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary">{item.title}</h4>
+                      <p className="text-sm text-foreground/70">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+              <h2 className="mb-4 text-3xl font-bold text-primary">State Representation Snapshot</h2>
+              <p className="mb-6 text-foreground/75">
+                Parliamentarians in the forum currently represent six states across India.
+              </p>
+
+              <div className="rounded-2xl bg-primary p-6 text-white">
+                <p className="mb-3 text-xs uppercase tracking-[0.2em] text-white/70">States represented</p>
+                <div className="flex flex-wrap gap-2">
+                  {STATES.map((state) => (
+                    <span
+                      key={state}
+                      className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wider"
+                    >
+                      {state}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 grid grid-cols-3 gap-2">
+                  {Array.from({ length: 6 }).map((_, index) => (
+                    <div key={index} className="h-2 rounded-full bg-white/25">
+                      <div className="h-2 w-full rounded-full bg-white" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <article className="mt-8 rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+            <h2 className="mb-4 text-3xl font-bold text-primary">Who are the members?</h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {members.map((member) => (
+                <div key={member} className="rounded-xl border border-primary/10 bg-primary/5 px-4 py-3 text-sm text-foreground/80">
+                  {member}
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
     </div>

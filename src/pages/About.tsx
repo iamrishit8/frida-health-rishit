@@ -1,206 +1,212 @@
-import { useState } from "react";
-import { Linkedin, Target, Compass, ArrowUpRight, ChevronRight } from "lucide-react";
-
-// Types for Priority Areas
-type PriorityArea = {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-};
-
-const priorityAreas: PriorityArea[] = [
-  { id: 'maternal', title: 'Maternal Health', description: 'Improving outcomes for mothers and newborns through policy intervention and better access to prenatal care.', image: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df4?auto=format&fit=crop&q=80&w=800' },
-  { id: 'digital', title: 'Digital Rights', description: 'Ensuring privacy, equity, and data security in the rapidly expanding digital health ecosystem.', image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800' },
-  { id: 'climate', title: 'Climate Action', description: 'Mitigating the severe health impacts of climate change on vulnerable populations through sustainable policy.', image: 'https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?auto=format&fit=crop&q=80&w=800' },
-  { id: 'mental', title: 'Mental Health', description: 'Destigmatizing care and integrating mental health support into primary community response systems.', image: 'https://images.unsplash.com/photo-1527137342181-191f53eb970d?auto=format&fit=crop&q=80&w=800' },
-  { id: 'nutrition', title: 'Nutrition', description: 'Combating malnutrition through evidence-backed food security policies and community education.', image: 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&q=80&w=800' },
-  { id: 'gender', title: 'Gender Equity', description: 'Mainstreaming gender responsiveness in all health programs to ensure equal access for all.', image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
-];
+import { useEffect, useState } from "react";
+import { ChevronDown, Linkedin } from "lucide-react";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
 
-const TeamMember = ({ name, role }: { name: string; role: string }) => (
-  <div className="flex items-center justify-between p-6 border border-primary/10 rounded-lg hover:border-primary/30 hover:shadow-md transition-all bg-white group">
-    <div className="flex items-center gap-4">
-      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-serif font-bold text-2xl">
-        {name.charAt(0)}
-      </div>
-      <div>
-        <h4 className="font-serif text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">{name}</h4>
-        <p className="text-base text-foreground/60">{role}</p>
-      </div>
-    </div>
-    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="p-2 text-primary/40 hover:text-primary hover:bg-primary/5 rounded-full transition-all">
-      <Linkedin size={24} />
-    </a>
-  </div>
-);
+type TeamMember = {
+  id: string;
+  name: string;
+  designation: string;
+  bio: string;
+  photo: string;
+  linkedin: string;
+};
+
+const teamMembers: TeamMember[] = [
+  {
+    id: "prakshi",
+    name: "Prakshi Saha",
+    designation: "Founder",
+    photo:
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Leads FRIDA's vision, strategic partnerships, and institution-building to ensure women's health remains central to policy and systems change.",
+  },
+  {
+    id: "anita",
+    name: "Dr. Anita Sharma",
+    designation: "Executive Director",
+    photo:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Drives organizational strategy and interdisciplinary execution across research, advocacy, and engagement initiatives.",
+  },
+  {
+    id: "rahul",
+    name: "Rahul Verma",
+    designation: "Head of Research",
+    photo:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Leads evidence generation, synthesis, and publication development focused on women and girls' health outcomes.",
+  },
+  {
+    id: "priya",
+    name: "Priya Singh",
+    designation: "Advocacy Lead",
+    photo:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Leads policy engagement, campaigns, and coalition building to advance women's health priorities across institutions.",
+  },
+];
 
 const About = () => {
-  const [activePriority, setActivePriority] = useState<PriorityArea>(priorityAreas[0]);
+  const [activeMember, setActiveMember] = useState<string | null>(teamMembers[0]?.id ?? null);
+
+  useEffect(() => {
+    document.title = "About | FRIDA";
+  }, []);
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      
-      {/* 1. Who We Are - CONSISTENT HEADING */}
-      <section className="py-20 md:py-28 bg-primary/5">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8">Who We Are</h1>
-          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed mb-8">
-            FRIDA (Fostering Research, Impact, Development & Advocacy) is a health policy think-tank based in New Delhi. 
-            We are a collective of researchers, doctors, and policy advocates working to bridge the gap between scientific evidence and legislative action.
-          </p>
-          <div className="w-24 h-1.5 bg-primary mx-auto rounded-full"></div>
-        </div>
-      </section>
-
-      {/* 2. Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            
-            {/* Mission */}
-            <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 group">
-               <div className="h-64 overflow-hidden relative">
-                 <img 
-                    src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800" 
-                    alt="Mission" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                 />
-                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur text-primary p-3 rounded-full shadow-lg">
-                    <Target size={28} />
-                 </div>
-               </div>
-               <div className="p-8 md:p-10 flex flex-col justify-center flex-grow bg-white">
-                   <h2 className="text-3xl font-serif font-bold mb-4 text-primary">Our Mission</h2>
-                   <p className="text-lg leading-relaxed text-foreground/80">
-                     To democratize health policy by ensuring that the voices of the most vulnerable communities directly inform the decisions made in Parliament.
-                   </p>
-               </div>
-            </div>
-            
-            {/* Vision */}
-            <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 group">
-               <div className="h-64 overflow-hidden relative">
-                 <img 
-                    src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=800" 
-                    alt="Vision" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                 />
-                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur text-primary p-3 rounded-full shadow-lg">
-                    <Compass size={28} />
-                 </div>
-               </div>
-               <div className="p-8 md:p-10 flex flex-col justify-center flex-grow bg-white">
-                   <h2 className="text-3xl font-serif font-bold mb-4 text-primary">Our Vision</h2>
-                   <p className="text-lg leading-relaxed text-foreground/80">
-                     A nation where health is a guaranteed right, not a privilege, and where every policy is built on the pillars of equity, data, and compassion.
-                   </p>
-               </div>
-            </div>
-
+    <div className="min-h-screen bg-white">
+      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+        <div className="section-container">
+          <div className="mx-auto max-w-5xl text-center">
+            <h1 className="mb-7 text-4xl font-bold text-primary md:text-6xl">Who We Are</h1>
+            <p className="mb-5 text-lg leading-relaxed text-foreground/75 md:text-xl">
+              FRIDA- Women's Health Advocacy Lab is a not for profit based in India, South Asia, working towards advancing women's health, wellbeing, and dignity.
+            </p>
+            <p className="mb-5 text-lg leading-relaxed text-foreground/75 md:text-xl">
+              We use research, data, storytelling, policy advocacy, campaigns and community engagement to ensure women and girls have access to accurate knowledge, resources, and autonomy to make decisions about their bodies and health.
+            </p>
+            <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
+              At Frida, we see women's health as deeply interconnected with the systems that shape everyday life. Our work bridges evidence and action, translating research into conversations, and conversations into change.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 3. Priority Areas - NEW MASTER DETAIL LAYOUT */}
-      <section className="py-24 bg-slate-50 border-t border-primary/5">
-        <div className="container mx-auto px-4 max-w-7xl">
-           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Priority Areas</h2>
-             <p className="text-xl text-foreground/60">Core focuses driving our research and advocacy.</p>
-           </div>
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="grid gap-8 md:grid-cols-2">
+            <article className="rounded-3xl border border-primary/10 bg-white p-8 shadow-md md:p-10">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-primary/70">Mission</p>
+              <h2 className="mb-3 text-3xl font-bold text-primary">Prioritizing women's health and well being</h2>
+              <p className="text-lg leading-relaxed text-foreground/75">
+                We exist to advance and advocate for women's health, wellbeing, and dignity through evidence-based research, policy advocacy and community engagement.
+              </p>
+            </article>
 
-           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 items-start h-auto lg:h-[600px]">
-              
-              {/* List Column */}
-              <div className="flex flex-col gap-2 overflow-y-auto pr-2 custom-scrollbar h-full">
-                {priorityAreas.map((area) => (
+            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-8 shadow-md md:p-10">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-primary/70">Vision</p>
+              <h2 className="mb-3 text-3xl font-bold text-primary">Healthy and resilient futures.</h2>
+              <p className="text-lg leading-relaxed text-foreground/75">
+                We envision a future where women and girls have equitable access to knowledge, care, and systems that respect their autonomy, enabling them to live healthier, safer, and more empowered lives.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary/5">
+        <div className="section-container">
+          <div className="mx-auto max-w-5xl text-center">
+            <h2 className="mb-5 text-4xl font-bold text-primary">Priority Areas</h2>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {[
+                "Adolescent Health",
+                "Sexual and Reproductive Health",
+                "Breast and Cervical Cancer Prevention",
+                "Nutrition, Water, Sanitation and Hygiene",
+                "Climate Change and Women's Health",
+                "Technology & AI in Women's Health",
+              ].map((area) => (
+                <span key={area} className="rounded-full border border-primary/20 bg-white px-4 py-2 text-sm text-primary">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-slate-50">
+        <div className="section-container">
+          <div className="mx-auto mb-12 max-w-4xl text-center">
+            <h2 className="mb-5 text-4xl font-bold text-primary">Our Approach</h2>
+            <p className="mb-5 text-lg text-foreground/75 md:text-xl">
+              Frida employs evidence- based research, policy advocacy, and community engagement to achieve its development outcomes.
+            </p>
+            <p className="mb-5 text-lg text-foreground/75 md:text-xl">
+              By grounding our work in both data and lived experiences, we forge partnerships and collaborations to build pathways that strengthen systems.
+            </p>
+            <p className="text-lg font-medium text-primary md:text-xl">We translate evidence to action.</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
+              <h3 className="mb-2 text-xl font-semibold text-primary">Evidence-Based Research</h3>
+              <p className="text-foreground/70">Rigorous inquiry that makes complex health challenges understandable and actionable.</p>
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
+              <h3 className="mb-2 text-xl font-semibold text-primary">Policy Advocacy</h3>
+              <p className="text-foreground/70">Strategic engagement with decision-makers to prioritize women's health in systems and institutions.</p>
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
+              <h3 className="mb-2 text-xl font-semibold text-primary">Community Engagement</h3>
+              <p className="text-foreground/70">Listening-first collaboration to ensure women and girls shape the solutions that affect their lives.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="mb-12">
+            <h2 className="mb-2 text-4xl font-bold text-primary">Team and Advisors</h2>
+            <p className="text-foreground/70">Photo, name, designation, expandable bio, and LinkedIn profile.</p>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            {teamMembers.map((member) => {
+              const isOpen = activeMember === member.id;
+
+              return (
+                <article
+                  key={member.id}
+                  className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+                >
                   <button
-                    key={area.id}
-                    onMouseEnter={() => setActivePriority(area)}
-                    className={`text-left p-6 rounded-xl transition-all duration-300 flex items-center justify-between group ${
-                      activePriority.id === area.id 
-                        ? 'bg-primary text-white shadow-lg' 
-                        : 'bg-white hover:bg-primary/5 text-primary'
-                    }`}
+                    onClick={() => setActiveMember(isOpen ? null : member.id)}
+                    className="flex w-full items-center justify-between gap-4 p-5 text-left"
                   >
-                    <span className="font-serif text-xl font-bold">{area.title}</span>
-                    <ChevronRight 
-                      className={`transition-transform duration-300 ${
-                        activePriority.id === area.id ? 'translate-x-1 opacity-100' : 'opacity-0 group-hover:opacity-50'
-                      }`} 
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="h-16 w-16 rounded-xl object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div>
+                        <h3 className="text-2xl font-bold text-primary">{member.name}</h3>
+                        <p className="text-sm uppercase tracking-wider text-foreground/60">{member.designation}</p>
+                      </div>
+                    </div>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : "rotate-0"
+                      }`}
                     />
                   </button>
-                ))}
-              </div>
 
-              {/* Preview Column (Giant Blog Type Thing) */}
-              <div className="relative h-full min-h-[500px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 bg-white group">
-                 {/* Image */}
-                 <div className="absolute inset-0 h-3/5">
-                   <img 
-                     src={activePriority.image} 
-                     key={activePriority.image} // Force re-render for animation
-                     alt={activePriority.title}
-                     className="w-full h-full object-cover animate-fade-in"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
-                 </div>
-
-                 {/* Text Content */}
-                 <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-white p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 animate-fade-in-up">
-                      {activePriority.title}
-                    </h3>
-                    <p className="text-xl text-foreground/70 leading-relaxed animate-fade-in-up delay-100">
-                      {activePriority.description}
-                    </p>
-                 </div>
-              </div>
-
-           </div>
-        </div>
-      </section>
-
-      {/* 4. Our Approach */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-12 text-center">Our Approach</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Evidence-Based", desc: "We don't guess. We research. Every recommendation we make is backed by rigorous data analysis and field studies." },
-              { title: "Community-Led", desc: "We believe the expert on a problem is the person living through it. Our solutions are co-created with communities." },
-              { title: "Policy-Focused", desc: "Research shouldn't sit on a shelf. We translate findings into actionable briefs for MPs and policymakers." }
-            ].map((item, i) => (
-              <div key={i} className="bg-primary/5 p-8 rounded-2xl shadow-sm border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all group">
-                <div className="flex justify-between items-start mb-6">
-                   <h3 className="text-2xl font-serif font-bold text-primary">{item.title}</h3>
-                   <ArrowUpRight className="text-primary/20 group-hover:text-primary transition-colors" size={24} />
-                </div>
-                <p className="text-lg text-foreground/70 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Team */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Our Team</h2>
-            <p className="text-xl text-foreground/60">The minds behind the mission.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <TeamMember name="Dr. Anita Sharma" role="Executive Director" />
-            <TeamMember name="Rahul Verma" role="Head of Research" />
-            <TeamMember name="Priya Singh" role="Advocacy Lead" />
-            <TeamMember name="Amit Patel" role="Policy Analyst" />
-            <TeamMember name="Sarah John" role="Community Manager" />
-            <TeamMember name="Vikram Malhotra" role="Legal Advisor" />
+                  {isOpen && (
+                    <div className="border-t border-primary/10 bg-primary/5 px-6 py-5">
+                      <p className="mb-4 text-foreground/75">{member.bio}</p>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
+                      >
+                        <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                      </a>
+                    </div>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
