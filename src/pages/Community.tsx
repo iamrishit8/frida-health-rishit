@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { CloudSun, Droplets, ClipboardList } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
 
 const Community = () => {
   useEffect(() => {
@@ -8,9 +9,14 @@ const Community = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Community Engagement"
+        image="https://images.unsplash.com/photo-1469571486292-b53601020f70?auto=format&fit=crop&q=80&w=1600"
+        alt="Community engagement"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container text-center">
-          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Community Engagement</h1>
           <p className="mx-auto max-w-5xl text-lg leading-relaxed text-foreground/75 md:text-xl">
             We partner with women, girls, and local communities to understand how health challenges are experienced in everyday life. Through collaboration, education, field research, and participatory learning, we turn shared knowledge into practical action and policy recommendations that strengthen agency and awareness.
           </p>
@@ -84,6 +90,12 @@ const Community = () => {
                 </p>
               </div>
             </article>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {["https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1524601500432-1e1a4c71d692?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1469571486292-b53601020f70?auto=format&fit=crop&q=80&w=900"].map((img) => (
+              <img key={img} src={img} alt="Community gallery" className="h-40 w-full rounded-xl object-cover" loading="lazy" decoding="async" />
+            ))}
           </div>
         </div>
       </section>

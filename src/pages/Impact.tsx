@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Activity, Users, Landmark } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
 
 const Impact = () => {
   useEffect(() => {
@@ -8,9 +9,14 @@ const Impact = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Impact"
+        image="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=1600"
+        alt="Impact"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container text-center">
-          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Impact</h1>
           <p className="mx-auto max-w-4xl text-lg leading-relaxed text-foreground/75 md:text-xl">
             Our impact combines quantitative progress and qualitative change by connecting research, policy, and community-grounded action for women's health.
           </p>
@@ -44,17 +50,23 @@ const Impact = () => {
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-7 md:p-9">
-              <h2 className="mb-4 text-3xl font-bold text-primary">Qualitative Impact</h2>
-              <p className="text-foreground/75">
-                Frida's work is helping center women's health in policy dialogue and public discourse through stronger evidence translation, cross-sector partnerships, and consistent engagement with communities.
-              </p>
+            <article className="overflow-hidden rounded-3xl border border-primary/10 bg-primary/5">
+              <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&q=80&w=1200" alt="Qualitative impact" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <div className="p-7 md:p-9">
+                <h2 className="mb-4 text-3xl font-bold text-primary">Qualitative Impact</h2>
+                <p className="text-foreground/75">
+                  Frida's work is helping center women's health in policy dialogue and public discourse through stronger evidence translation, cross-sector partnerships, and consistent engagement with communities.
+                </p>
+              </div>
             </article>
-            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-7 md:p-9">
-              <h2 className="mb-4 text-3xl font-bold text-primary">Systems Change</h2>
-              <p className="text-foreground/75">
-                Across research, advocacy, and field engagement, we are contributing to more responsive systems that better recognize autonomy, access, and dignity in women's health.
-              </p>
+            <article className="overflow-hidden rounded-3xl border border-primary/10 bg-primary/5">
+              <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200" alt="Systems change" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <div className="p-7 md:p-9">
+                <h2 className="mb-4 text-3xl font-bold text-primary">Systems Change</h2>
+                <p className="text-foreground/75">
+                  Across research, advocacy, and field engagement, we are contributing to more responsive systems that better recognize autonomy, access, and dignity in women's health.
+                </p>
+              </div>
             </article>
           </div>
         </div>

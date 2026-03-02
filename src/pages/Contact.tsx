@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import PageHero from "@/components/ui/PageHero";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -25,9 +26,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Contact"
+        image="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1600"
+        alt="Contact"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container text-center">
-          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Contact</h1>
           <p className="mx-auto max-w-4xl text-lg text-foreground/75 md:text-xl">
             Whether you're interested in partnering with us, joining our network, or learning more about our work, we'd love to hear from you.
           </p>

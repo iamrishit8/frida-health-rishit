@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ArrowUpRight, Newspaper, Podcast, Video } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
 
 const features = [
   {
@@ -32,9 +33,14 @@ const Media = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Featured & Media"
+        image="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=1600"
+        alt="Featured media"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container text-center">
-          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Featured & Media</h1>
           <p className="mx-auto max-w-4xl text-lg leading-relaxed text-foreground/75 md:text-xl">
             A curated snapshot of Frida in media, public conversations, and featured external platforms.
           </p>

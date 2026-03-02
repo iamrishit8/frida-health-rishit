@@ -37,14 +37,14 @@ const WhatWeDo = () => {
           </p>
         </Reveal>
 
-        <div className="grid gap-7 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {workAreas.map((area, index) => (
             <Reveal key={area.title} delay={index * 0.08}>
               <Link
                 to={area.link}
                 className="group block overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-md transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-72 overflow-hidden">
                   <img
                     src={area.image}
                     alt={area.title}
@@ -56,7 +56,7 @@ const WhatWeDo = () => {
                   <h3 className="absolute bottom-5 left-5 text-3xl font-bold text-white">{area.title}</h3>
                 </div>
 
-                <div className="p-6">
+                <div className="p-7">
                   <p className="mb-4 text-base text-foreground/70">{area.description}</p>
                   <div className="inline-flex items-center font-medium text-primary">
                     Learn more <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

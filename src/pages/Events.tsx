@@ -1,11 +1,19 @@
 import { useEffect } from "react";
 import { CalendarDays } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const events = [
   {
     title: "Winter Session 2025 Parliamentary Roundtable",
     date: "December 8, 2025",
     image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
+    ],
     description: [
       "During the Parliament Winter Session of 2025, Frida convened a Parliamentary Roundtable bringing together members of our Parliamentarians' Forum to strengthen dialogue around women's health priorities and evidence-based policy pathways.",
       "The session launched three critical research outputs: Policy Brief on Strengthening India's Cervical Cancer Response, Policy Brief on Strengthening India's Breast Cancer Response, and Women's Health in India - Landscape Report.",
@@ -17,6 +25,11 @@ const events = [
     date: "October 7, 2025",
     subtitle: "Official Pre-Summit Event of the AI Impact Summit 2026",
     image: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    ],
     description: [
       "Frida partnered with the Trust and Safety India Festival (TASI) 2025 and hosted a side event, contributing a women's health lens to the global conversation on digital trust, safety, and governance.",
       "Panel titled Bodies, Bans, and Algorithms: Reclaiming SRHR Access in the Age of Digital Censorship and Control examined how digital censorship, content moderation systems, and algorithmic regulation shape access to sexual and reproductive health information.",
@@ -27,6 +40,11 @@ const events = [
     title: "Period Party",
     date: "May 28, 2025",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=1200",
+    ],
     description: [
       "To mark World Menstrual Health Day, Frida hosted its first-ever Period Party, a creative, liberating, feminist space with 50+ participants for conversation, art, storytelling, and reflection around menstruation and bodily autonomy.",
       "The event featured the panel Bloody Hell and included voices from Swarnima Bhattacharya, Laetitia Bruce Warjri, Sachee Malhotra, and Sumedha Pal.",
@@ -42,9 +60,14 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Events"
+        image="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&q=80&w=1600"
+        alt="Events"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container text-center">
-          <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Events</h1>
           <p className="mx-auto max-w-5xl text-lg leading-relaxed text-foreground/75 md:text-xl">
             Frida convenes and contributes to spaces that bring together policymakers, researchers, advocates, and communities to advance critical conversations on women's health.
           </p>
@@ -56,14 +79,37 @@ const Events = () => {
           {events.map((event) => (
             <article key={event.title} className="overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-sm">
               <div className="grid gap-0 md:grid-cols-[1fr_1.25fr]">
-                <div className="h-64 md:h-full">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                <div className="h-72 md:h-[420px] overflow-hidden bg-primary/5">
+                  <Carousel
+                    opts={{ loop: true, align: "start" }}
+                    plugins={[
+                      Autoplay({
+                        delay: 3200,
+                        stopOnInteraction: true,
+                      }),
+                    ]}
+                    className="h-full"
+                  >
+                    <CarouselContent className="h-full">
+                      {event.gallery.map((photo, idx) => (
+                        <CarouselItem key={`${event.title}-main-${idx}`} className="h-full pl-0">
+                          <img
+                            src={photo}
+                            alt={`${event.title} photo ${idx + 1}`}
+                            className="h-72 w-full object-cover md:h-[420px]"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious
+                      className="left-3 top-1/2 z-20 -translate-y-1/2 border-white/40 bg-black/35 text-white hover:bg-black/55 hover:text-white"
+                    />
+                    <CarouselNext
+                      className="right-3 top-1/2 z-20 -translate-y-1/2 border-white/40 bg-black/35 text-white hover:bg-black/55 hover:text-white"
+                    />
+                  </Carousel>
                 </div>
 
                 <div className="p-6 md:p-8">
@@ -78,17 +124,6 @@ const Events = () => {
                   <div className="space-y-3 text-foreground/75">
                     {event.description.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 grid grid-cols-3 gap-3">
-                    {[1, 2, 3].map((slot) => (
-                      <div
-                        key={`${event.title}-${slot}`}
-                        className="rounded-xl border border-primary/15 bg-primary/5 p-4 text-center text-xs uppercase tracking-wider text-primary/65"
-                      >
-                        Photo {slot}
-                      </div>
                     ))}
                   </div>
                 </div>

@@ -17,6 +17,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
+
+      <section className="bg-white py-14 md:py-20">
+        <div className="section-container">
+          <Reveal className="mx-auto max-w-5xl rounded-3xl border border-primary/10 bg-primary/5 p-7 text-center shadow-sm md:p-10">
+            <p className="mb-3 text-lg leading-relaxed text-foreground/80 md:text-2xl">
+              By strengthening knowledge, care, and systems around women and girls, we create change that reaches families, communities, and future generations.
+            </p>
+            <p className="mb-3 text-lg leading-relaxed text-foreground/80 md:text-2xl">
+              Advancing women's health through research, action, and systems change.
+            </p>
+            <p className="text-lg leading-relaxed text-foreground/80 md:text-2xl">
+              Building evidence-driven solutions that strengthen lives, families, and futures.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <ImpactNumbers />
       <WhatWeDo />
       <AreasOfWork />

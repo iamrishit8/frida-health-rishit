@@ -19,16 +19,23 @@ const Advocacy = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
-        <div className="section-container">
-          <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-6 text-4xl font-bold text-primary md:text-6xl">Advocacy</h1>
-            <p className="mb-4 text-lg leading-relaxed text-foreground/75 md:text-xl">
-              Frida advances women's health by bridging the gap between policy discourse and community-grounded insights.
-            </p>
-            <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
-              We bring to policy makers research, data, knowledge as well as stories, and lived realities of women and girls across India. We believe women's health policy must be evidence-based, community-informed, and shaped by those it affects most.
-            </p>
+      <section className="pt-20">
+        <div className="grid min-h-[45vh] md:grid-cols-2">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600"
+            alt="Advocacy"
+            className="h-full min-h-[260px] w-full object-cover"
+          />
+          <div className="flex items-center bg-primary/5 px-6 py-10 md:px-12">
+            <div>
+              <h1 className="mb-5 text-4xl font-bold text-primary md:text-6xl">Advocacy</h1>
+              <p className="mb-4 text-lg leading-relaxed text-foreground/75 md:text-xl">
+                Frida advances women's health by bridging the gap between policy discourse and community-grounded insights.
+              </p>
+              <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
+                We bring to policy makers research, data, knowledge as well as stories, and lived realities of women and girls across India. We believe women's health policy must be evidence-based, community-informed, and shaped by those it affects most.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { ChevronDown, Linkedin } from "lucide-react";
+import { useEffect } from "react";
+import { Linkedin } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
+import Reveal from "@/components/ui/Reveal";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
 
@@ -49,21 +51,42 @@ const teamMembers: TeamMember[] = [
     linkedin: LINKEDIN_URL,
     bio: "Leads policy engagement, campaigns, and coalition building to advance women's health priorities across institutions.",
   },
+  {
+    id: "sarah",
+    name: "Sarah John",
+    designation: "Community Engagement Manager",
+    photo:
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Designs community-centered programs and participatory approaches that translate local realities into meaningful action.",
+  },
+  {
+    id: "amit",
+    name: "Amit Patel",
+    designation: "Policy Analyst",
+    photo:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=900",
+    linkedin: LINKEDIN_URL,
+    bio: "Supports policy synthesis, systems analysis, and legislative tracking to strengthen evidence-informed advocacy outputs.",
+  },
 ];
 
 const About = () => {
-  const [activeMember, setActiveMember] = useState<string | null>(teamMembers[0]?.id ?? null);
-
   useEffect(() => {
     document.title = "About | FRIDA";
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary/5 pb-16 pt-28 md:pt-36">
+      <PageHero
+        title="Who We Are"
+        image="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1600"
+        alt="FRIDA team"
+      />
+
+      <section className="py-12 md:py-16">
         <div className="section-container">
           <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-7 text-4xl font-bold text-primary md:text-6xl">Who We Are</h1>
             <p className="mb-5 text-lg leading-relaxed text-foreground/75 md:text-xl">
               FRIDA- Women's Health Advocacy Lab is a not for profit based in India, South Asia, working towards advancing women's health, wellbeing, and dignity.
             </p>
@@ -73,6 +96,12 @@ const About = () => {
             <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
               At Frida, we see women's health as deeply interconnected with the systems that shape everyday life. Our work bridges evidence and action, translating research into conversations, and conversations into change.
             </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {["https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000", "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1000", "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1000"].map((img) => (
+              <img key={img} src={img} alt="About gallery" className="h-44 w-full rounded-2xl object-cover md:h-52" loading="lazy" decoding="async" />
+            ))}
           </div>
         </div>
       </section>
@@ -99,28 +128,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-primary/5">
-        <div className="section-container">
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="mb-5 text-4xl font-bold text-primary">Priority Areas</h2>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {[
-                "Adolescent Health",
-                "Sexual and Reproductive Health",
-                "Breast and Cervical Cancer Prevention",
-                "Nutrition, Water, Sanitation and Hygiene",
-                "Climate Change and Women's Health",
-                "Technology & AI in Women's Health",
-              ].map((area) => (
-                <span key={area} className="rounded-full border border-primary/20 bg-white px-4 py-2 text-sm text-primary">
-                  {area}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding bg-slate-50">
         <div className="section-container">
           <div className="mx-auto mb-12 max-w-4xl text-center">
@@ -133,21 +140,6 @@ const About = () => {
             </p>
             <p className="text-lg font-medium text-primary md:text-xl">We translate evidence to action.</p>
           </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
-              <h3 className="mb-2 text-xl font-semibold text-primary">Evidence-Based Research</h3>
-              <p className="text-foreground/70">Rigorous inquiry that makes complex health challenges understandable and actionable.</p>
-            </div>
-            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
-              <h3 className="mb-2 text-xl font-semibold text-primary">Policy Advocacy</h3>
-              <p className="text-foreground/70">Strategic engagement with decision-makers to prioritize women's health in systems and institutions.</p>
-            </div>
-            <div className="rounded-2xl border border-primary/10 bg-white p-7 shadow-sm">
-              <h3 className="mb-2 text-xl font-semibold text-primary">Community Engagement</h3>
-              <p className="text-foreground/70">Listening-first collaboration to ensure women and girls shape the solutions that affect their lives.</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -155,58 +147,40 @@ const About = () => {
         <div className="section-container">
           <div className="mb-12">
             <h2 className="mb-2 text-4xl font-bold text-primary">Team and Advisors</h2>
-            <p className="text-foreground/70">Photo, name, designation, expandable bio, and LinkedIn profile.</p>
+            <p className="text-foreground/70">Photo, designation and LinkedIn. Hover cards to view bio.</p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
-            {teamMembers.map((member) => {
-              const isOpen = activeMember === member.id;
+          <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+            {teamMembers.map((member, index) => (
+              <Reveal key={member.id} delay={index * 0.05}>
+                <article className="group relative overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-sm">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="h-[24rem] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
 
-              return (
-                <article
-                  key={member.id}
-                  className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
-                >
-                  <button
-                    onClick={() => setActiveMember(isOpen ? null : member.id)}
-                    className="flex w-full items-center justify-between gap-4 p-5 text-left"
-                  >
-                    <div className="flex items-center gap-4">
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="h-16 w-16 rounded-xl object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      <div>
-                        <h3 className="text-2xl font-bold text-primary">{member.name}</h3>
-                        <p className="text-sm uppercase tracking-wider text-foreground/60">{member.designation}</p>
-                      </div>
-                    </div>
-                    <ChevronDown
-                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                  </button>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 via-primary/40 to-transparent p-5 transition-opacity duration-300 group-hover:opacity-0">
+                    <p className="text-xl font-semibold text-white">{member.name}</p>
+                    <p className="text-sm uppercase tracking-wider text-white/75">{member.designation}</p>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center rounded-full border border-white/45 bg-primary/30 px-3 py-1 text-xs uppercase tracking-wider text-white"
+                    >
+                      <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
+                    </a>
+                  </div>
 
-                  {isOpen && (
-                    <div className="border-t border-primary/10 bg-primary/5 px-6 py-5">
-                      <p className="mb-4 text-foreground/75">{member.bio}</p>
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
-                      >
-                        <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-                      </a>
-                    </div>
-                  )}
+                  <div className="absolute inset-0 flex items-end bg-primary/92 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="text-sm leading-relaxed text-white">{member.bio}</p>
+                  </div>
                 </article>
-              );
-            })}
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
