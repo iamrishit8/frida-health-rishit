@@ -1,49 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="hero-shell relative min-h-[62vh] overflow-hidden">
+    <section className="hero-shell relative min-h-[60vh] overflow-hidden md:min-h-[64vh]">
       <div className="absolute inset-0">
         <img
-          src="/hero-women-community.jpg"
-          alt="Women and girls in community health settings"
-          className="h-full w-full object-cover object-center"
+          src="/images/home/hero-main.jpg"
+          alt="Girls in a community setting"
+          className="hero-image h-full w-full object-cover object-center"
           fetchPriority="high"
           decoding="async"
+          onError={(e) => {
+            e.currentTarget.src =
+              "https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?auto=format&fit=crop&q=80&w=2200";
+          }}
         />
-        <div className="hero-overlay animate-hero-shift absolute inset-0" />
+        <div className="hero-overlay animate-hero-shift absolute inset-0 opacity-50" />
+        <div className="hero-vignette absolute inset-0" />
+        <div className="hero-frame absolute inset-4 rounded-[1.75rem] border border-white/18 md:inset-6" />
       </div>
 
-      <div className="section-container relative z-10 flex min-h-[62vh] items-center py-10">
-        <div className="max-w-5xl animate-fade-in-up">
-          <h1 className="text-balance mb-6 max-w-5xl text-4xl font-bold leading-[1.02] text-white drop-shadow md:text-6xl">
+      <div className="section-container relative z-10 flex min-h-[60vh] flex-col justify-between py-8 md:min-h-[64vh] md:py-10">
+        <div className="animate-fade-in-up pt-4 md:pt-8">
+          <h1 className="text-balance max-w-2xl text-left text-3xl font-bold leading-[1.02] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.28)] md:text-5xl lg:text-6xl">
             Healthy and resilient futures for women and girls
           </h1>
+        </div>
 
-          <div className="mb-10 flex flex-wrap gap-3 text-xs uppercase tracking-widest text-white/90 md:text-sm">
-            <span className="animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Research</span>
-            <span className="animation-delay-200 animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Advocacy</span>
-            <span className="animation-delay-300 animate-float rounded-full border border-white/35 bg-white/10 px-4 py-2 backdrop-blur">Community Engagement</span>
-          </div>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link to="/about">
-              <Button size="lg" className="h-auto rounded-full bg-white px-8 py-4 text-base font-semibold text-primary hover:bg-white/90">
-                Learn About FRIDA
-              </Button>
-            </Link>
-            <Link to="/research">
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-auto rounded-full border-2 border-white bg-transparent px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-primary"
-              >
-                Explore Research <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+        <div className="pointer-events-none flex flex-1 items-end justify-center pb-8 md:pb-12">
+          <Link to="/about" className="pointer-events-auto">
+            <Button
+              size="lg"
+              className="hero-cta h-auto rounded-full border border-white/40 bg-white/92 px-8 py-4 text-base font-semibold text-primary shadow-[0_18px_60px_rgba(100,13,20,0.22)] hover:bg-white"
+            >
+              Learn About FRIDA
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
