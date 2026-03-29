@@ -38,12 +38,12 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-primary/10" : "bg-transparent"
+        "fixed z-50 w-full transition-all duration-500",
+        scrolled ? "glass-nav border-b border-primary/10" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
             <img 
@@ -52,19 +52,19 @@ const Navbar = () => {
                className="h-10 w-auto transition-transform group-hover:scale-105"
                onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
-            <span className="text-2xl font-serif font-bold text-primary tracking-tight group-hover:opacity-80 transition-opacity">
+            <span className="text-2xl font-serif font-bold text-primary tracking-tight transition-opacity group-hover:opacity-80">
               FRIDA
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center space-x-6">
+          <div className="hidden items-center space-x-6 xl:flex">
             {navLinks.map((link) => (
               <NavLink 
                 key={link.name} 
                 to={link.path}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-                activeClassName="text-primary font-bold"
+                className="font-ui hover-underline text-sm font-medium tracking-[0.01em] text-foreground/80 transition-colors hover:text-primary"
+                activeClassName="font-ui text-primary font-semibold"
               >
                 {link.name}
               </NavLink>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "block px-4 py-4 text-lg font-medium rounded-lg transition-colors border-b border-dashed border-primary/10 last:border-0",
+                  "font-ui block rounded-lg border-b border-dashed border-primary/10 px-4 py-4 text-lg font-medium transition-colors last:border-0",
                   location.pathname === link.path
                     ? "bg-primary/5 text-primary font-bold"
                     : "text-foreground/80 hover:bg-primary/5 hover:text-primary"

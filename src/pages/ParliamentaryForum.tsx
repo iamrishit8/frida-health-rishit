@@ -167,9 +167,9 @@ const ParliamentaryForum = () => {
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {members.map((member, index) => (
                 <Reveal key={member.name} delay={index * 0.05}>
-                  <div className="group relative overflow-hidden rounded-2xl border border-primary/10">
-                    <img src={member.photo} alt={member.name} className="h-80 w-full object-cover" loading="lazy" decoding="async" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 via-primary/45 to-transparent p-4 transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="group relative overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white shadow-[0_22px_80px_rgba(100,13,20,0.08)] transition-transform duration-500 hover:-translate-y-2">
+                    <img src={member.photo} alt={member.name} className="h-96 w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/88 via-primary/52 to-transparent p-5 transition-opacity duration-300 group-hover:opacity-0">
                       <p className="text-base font-semibold text-white">{member.name}</p>
                       <p className="text-xs uppercase tracking-wider text-white/75">{member.role}</p>
                       <a
@@ -181,8 +181,20 @@ const ParliamentaryForum = () => {
                         <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
                       </a>
                     </div>
-                    <div className="absolute inset-0 flex items-end bg-primary/92 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <p className="text-sm text-white">{member.bio}</p>
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary via-primary/95 to-primary/68 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <div className="translate-y-3 transition-transform duration-300 group-hover:translate-y-0">
+                        <p className="text-lg font-semibold text-white">{member.name}</p>
+                        <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/70">{member.role}</p>
+                        <p className="mt-4 text-sm leading-relaxed text-white/92">{member.bio}</p>
+                        <a
+                          href={LINKEDIN_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-5 inline-flex items-center rounded-full border border-white/45 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm transition-colors hover:bg-white/18"
+                        >
+                          <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </Reveal>

@@ -28,7 +28,8 @@ const workAreas = [
 
 const WhatWeDo = () => {
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="section-padding relative overflow-hidden bg-[linear-gradient(180deg,rgba(100,13,20,0.04),rgba(255,255,255,1)_26%)]">
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-[radial-gradient(circle_at_center,_rgba(100,13,20,0.08),_transparent_60%)]" />
       <div className="section-container">
         <Reveal className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-5 text-4xl font-bold text-primary md:text-5xl">What do we do?</h2>
@@ -42,24 +43,28 @@ const WhatWeDo = () => {
             <Reveal key={area.title} delay={index * 0.08}>
               <Link
                 to={area.link}
-                className="group block overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-md transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl"
+                className="group lift-card relative block min-h-full overflow-hidden rounded-[2.1rem] border border-primary/10 bg-white/97 p-5 shadow-[0_26px_82px_rgba(100,13,20,0.08)] transition-all duration-500 hover:border-primary/20"
               >
-                <div className="relative h-72 overflow-hidden">
+                <div className="mb-5 rounded-[1.65rem] border border-primary/10 bg-gradient-to-b from-primary/5 to-primary/8 px-5 py-6">
+                  <h3 className="font-ui text-center text-[2rem] font-medium tracking-[-0.02em] text-primary">{area.title}</h3>
+                </div>
+
+                <div className="relative overflow-hidden rounded-[1.8rem] bg-primary/5 pt-8">
+                  <div className="absolute left-1/2 top-4 h-14 w-[72%] -translate-x-1/2 rounded-[999px] bg-primary/14 blur-[1px]" />
+                  <div className="absolute left-1/2 top-8 h-14 w-[82%] -translate-x-1/2 rounded-[999px] bg-primary/8" />
                   <img
                     src={area.image}
                     alt={area.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-[26rem] w-full rounded-[1.8rem] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
-                  <h3 className="absolute bottom-5 left-5 text-3xl font-bold text-white">{area.title}</h3>
                 </div>
 
-                <div className="p-7">
-                  <p className="mb-4 text-base text-foreground/70">{area.description}</p>
-                  <div className="inline-flex items-center font-medium text-primary">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <div className="flex min-h-[17rem] flex-col p-4 pt-7">
+                  <p className="mb-8 text-[1.9rem] leading-[1.34] text-foreground/82">{area.description}</p>
+                  <div className="font-ui mt-auto inline-flex items-center gap-2 text-base font-medium text-primary">
+                    Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>

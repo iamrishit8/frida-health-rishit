@@ -150,33 +150,45 @@ const About = () => {
             <p className="text-foreground/70">Photo, designation and LinkedIn. Hover cards to view bio.</p>
           </div>
 
-          <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {teamMembers.map((member, index) => (
               <Reveal key={member.id} delay={index * 0.05}>
-                <article className="group relative overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-sm">
+                <article className="group relative overflow-hidden rounded-[1.8rem] border border-primary/10 bg-white shadow-[0_20px_64px_rgba(100,13,20,0.07)] transition-transform duration-500 hover:-translate-y-2">
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="h-[24rem] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-[26rem] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 via-primary/40 to-transparent p-5 transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/76 via-primary/34 to-transparent p-6 transition-opacity duration-300 group-hover:opacity-0">
                     <p className="text-xl font-semibold text-white">{member.name}</p>
-                    <p className="text-sm uppercase tracking-wider text-white/75">{member.designation}</p>
+                    <p className="font-ui text-sm uppercase tracking-wider text-white/75">{member.designation}</p>
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center rounded-full border border-white/45 bg-primary/30 px-3 py-1 text-xs uppercase tracking-wider text-white"
+                      className="font-ui mt-3 inline-flex items-center rounded-full border border-white/40 bg-primary/18 px-3 py-1 text-xs uppercase tracking-wider text-white"
                     >
                       <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
                     </a>
                   </div>
 
-                  <div className="absolute inset-0 flex items-end bg-primary/92 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="text-sm leading-relaxed text-white">{member.bio}</p>
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/88 via-primary/72 to-primary/42 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="translate-y-3 transition-transform duration-300 group-hover:translate-y-0">
+                      <p className="text-xl font-semibold text-white">{member.name}</p>
+                      <p className="font-ui mt-1 text-xs uppercase tracking-[0.18em] text-white/70">{member.designation}</p>
+                      <p className="mt-4 text-sm leading-relaxed text-white/92">{member.bio}</p>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-ui mt-5 inline-flex items-center rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm transition-colors hover:bg-white/18"
+                      >
+                        <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
+                      </a>
+                    </div>
                   </div>
                 </article>
               </Reveal>

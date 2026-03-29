@@ -1,14 +1,13 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="hero-shell relative min-h-[60vh] overflow-hidden md:min-h-[64vh]">
+    <section className="hero-shell relative min-h-[66vh] overflow-hidden md:min-h-[76vh]">
       <div className="absolute inset-0">
         <img
           src="/images/home/hero-main.jpg"
           alt="Girls in a community setting"
-          className="hero-image h-full w-full object-cover object-center"
+          className="hero-image animate-kenburns h-full w-full object-cover object-center"
           fetchPriority="high"
           decoding="async"
           onError={(e) => {
@@ -16,26 +15,30 @@ const Hero = () => {
               "https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?auto=format&fit=crop&q=80&w=2200";
           }}
         />
-        <div className="hero-overlay animate-hero-shift absolute inset-0 opacity-50" />
+        <div className="hero-overlay animate-hero-shift absolute inset-0 opacity-44" />
         <div className="hero-vignette absolute inset-0" />
-        <div className="hero-frame absolute inset-4 rounded-[1.75rem] border border-white/18 md:inset-6" />
+        <div className="hero-glow absolute -left-24 top-10 h-64 w-64 rounded-full blur-3xl md:h-80 md:w-80" />
+        <div className="hero-grain absolute inset-0" />
       </div>
 
-      <div className="section-container relative z-10 flex min-h-[60vh] flex-col justify-between py-8 md:min-h-[64vh] md:py-10">
-        <div className="animate-fade-in-up pt-4 md:pt-8">
-          <h1 className="text-balance max-w-2xl text-left text-3xl font-bold leading-[1.02] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.28)] md:text-5xl lg:text-6xl">
+      <div className="section-container relative z-10 flex min-h-[66vh] flex-col justify-between py-8 md:min-h-[76vh] md:py-12">
+        <div className="animate-fade-in-up pt-6 md:pt-10">
+          <p className="font-ui mb-5 inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white/80 backdrop-blur-md md:text-xs">
+            Research. Advocacy. Community.
+          </p>
+          <h1 className="text-balance max-w-4xl text-left text-4xl font-semibold leading-[0.96] text-white drop-shadow-[0_16px_45px_rgba(0,0,0,0.34)] md:text-6xl lg:text-7xl">
             Healthy and resilient futures for women and girls
           </h1>
         </div>
 
-        <div className="pointer-events-none flex flex-1 items-end justify-center pb-8 md:pb-12">
+        <div className="pointer-events-none flex flex-1 items-end justify-center pb-10 md:pb-14">
           <Link to="/about" className="pointer-events-auto">
-            <Button
-              size="lg"
-              className="hero-cta h-auto rounded-full border border-white/40 bg-white/92 px-8 py-4 text-base font-semibold text-primary shadow-[0_18px_60px_rgba(100,13,20,0.22)] hover:bg-white"
-            >
-              Learn About FRIDA
-            </Button>
+            <span className="hero-cta group">
+              <span className="hero-cta__label">Learn About FRIDA</span>
+              <span className="hero-cta__icon" aria-hidden="true">
+                ↗
+              </span>
+            </span>
           </Link>
         </div>
       </div>
