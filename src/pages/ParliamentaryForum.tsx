@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Handshake, BookOpenCheck, ShieldCheck, Users, Landmark, MapPinned, Linkedin } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
+import { siteImages } from "@/lib/site-images";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
 
@@ -10,49 +11,49 @@ const members = [
     name: "KR Suresh Reddy",
     role: "Rajya Sabha Member of Parliament, Telangana (BRS)",
     bio: "Supports stronger legislative attention to women's health priorities and long-term systems reform.",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.suresh,
   },
   {
     name: "Dr. Maddila Gurumoorthy",
     role: "Lok Sabha Member of Parliament, Andhra Pradesh (YSRCP)",
     bio: "Advocates for evidence-informed policy pathways that improve prevention, care access, and health equity.",
-    photo: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.gurumoorthy,
   },
   {
     name: "Vishal Patil",
     role: "Lok Sabha Member of Parliament, Maharashtra (Swabhimani Paksha)",
     bio: "Focuses on connecting constituency-level realities with national policy conversations on women's health.",
-    photo: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.vishal,
   },
   {
     name: "Dr. Fauzia Khan",
     role: "Rajya Sabha Member of Parliament, Maharashtra (NCP-SP)",
     bio: "Contributes to cross-party dialogue on equitable and inclusive health systems for women and girls.",
-    photo: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.fauzia,
   },
   {
     name: "Pradyut Bordoloi",
     role: "Lok Sabha Member of Parliament, Assam (INC)",
     bio: "Engages in policy discussions that strengthen accountability and improve service delivery outcomes.",
-    photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.pradyut,
   },
   {
     name: "Dr. T Sumathy",
     role: "Lok Sabha Member of Parliament, Tamil Nadu (DMK)",
     bio: "Supports sustained consensus-building around women-centered health interventions and rights.",
-    photo: "https://images.unsplash.com/photo-1573497019707-1c04de26e58f?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.sumathy,
   },
   {
     name: "Sulata Deo",
     role: "Rajya Sabha Member of Parliament, Odisha (BJD)",
     bio: "Advocates for stronger representation of lived experiences in public health and policy design.",
-    photo: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.sulata,
   },
   {
     name: "Jothimani S.",
     role: "Lok Sabha Member of Parliament, Tamil Nadu (INC)",
     bio: "Contributes to policy action that advances autonomy, dignity, and equitable access in women's health.",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.forum.members.jothimani,
   },
 ];
 
@@ -83,7 +84,7 @@ const ParliamentaryForum = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Parliamentarians' Forum on Women's Health"
-        image="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.forum.hero}
         alt="Parliament forum"
       />
 
@@ -152,7 +153,7 @@ const ParliamentaryForum = () => {
               <p className="mb-6 text-foreground/75">Map image can be replaced with your final visual.</p>
               <div className="h-[320px] overflow-hidden rounded-2xl bg-primary/10">
                 <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&q=80&w=1400"
+                  src={siteImages.forum.mapPlaceholder}
                   alt="Map placeholder"
                   className="h-full w-full object-cover"
                   loading="lazy"

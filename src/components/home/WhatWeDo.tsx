@@ -1,28 +1,26 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import { siteImages } from "@/lib/site-images";
 
 const workAreas = [
   {
     title: "Research",
     description: "Generating practical evidence that helps improve policy, services, and everyday health decisions for women and girls.",
     link: "/research",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.home.whatWeDo.research,
   },
   {
     title: "Advocacy",
     description: "Partnering with decision-makers to prioritize women's health and wellbeing through inclusive, data-backed policy action.",
     link: "/advocacy",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.home.whatWeDo.advocacy,
   },
   {
     title: "Community Engagement",
     description: "Working with communities to strengthen awareness, trust, and equitable access to health information and services.",
     link: "/community",
-    image:
-      "https://images.unsplash.com/photo-1469571486292-b53601020f70?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.home.whatWeDo.community,
   },
 ];
 
@@ -38,15 +36,15 @@ const WhatWeDo = () => {
           </p>
         </Reveal>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 md:[grid-auto-rows:1fr]">
           {workAreas.map((area, index) => (
             <Reveal key={area.title} delay={index * 0.08}>
               <Link
                 to={area.link}
-                className="group lift-card relative block min-h-full overflow-hidden rounded-[2.1rem] border border-primary/10 bg-white/97 p-5 shadow-[0_26px_82px_rgba(100,13,20,0.08)] transition-all duration-500 hover:border-primary/20"
+                className="group lift-card relative flex min-h-full flex-col overflow-hidden rounded-[2.1rem] border border-primary/10 bg-white/97 p-5 shadow-[0_26px_82px_rgba(100,13,20,0.08)] transition-all duration-500 hover:border-primary/20"
               >
-                <div className="mb-5 rounded-[1.65rem] border border-primary/10 bg-gradient-to-b from-primary/5 to-primary/8 px-5 py-6">
-                  <h3 className="font-ui text-center text-[2rem] font-medium tracking-[-0.02em] text-primary">{area.title}</h3>
+                <div className="mb-5 flex min-h-[7rem] items-center justify-center rounded-[1.65rem] border border-primary/10 bg-gradient-to-b from-primary/5 to-primary/8 px-5 py-6 text-center">
+                  <h3 className="font-ui text-center text-[1.9rem] font-medium leading-[1.05] tracking-[-0.02em] text-primary">{area.title}</h3>
                 </div>
 
                 <div className="relative overflow-hidden rounded-[1.8rem] bg-primary/5 pt-8">
@@ -55,14 +53,15 @@ const WhatWeDo = () => {
                   <img
                     src={area.image}
                     alt={area.title}
-                    className="h-[26rem] w-full rounded-[1.8rem] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="animate-card-pan h-[26rem] w-full rounded-[1.8rem] object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
                     loading="lazy"
                     decoding="async"
                   />
+                  <div className="absolute inset-0 rounded-[1.8rem] bg-gradient-to-t from-primary/12 via-transparent to-white/6" />
                 </div>
 
-                <div className="flex min-h-[17rem] flex-col p-4 pt-7">
-                  <p className="mb-8 text-[1.9rem] leading-[1.34] text-foreground/82">{area.description}</p>
+                <div className="flex min-h-[17rem] flex-1 flex-col p-4 pt-7">
+                  <p className="mb-8 text-[1.75rem] leading-[1.34] text-foreground/82">{area.description}</p>
                   <div className="font-ui mt-auto inline-flex items-center gap-2 text-base font-medium text-primary">
                     Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>

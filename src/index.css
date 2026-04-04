@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -161,7 +161,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     background-image:
       radial-gradient(circle at top left, hsl(var(--primary) / 0.045), transparent 24%),
       radial-gradient(circle at bottom right, hsl(var(--primary) / 0.035), transparent 20%);
@@ -169,7 +169,7 @@
 
   /* Typography System */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     @apply font-medium tracking-tight text-primary; /* Headers now use Primary (Rosewood) */
   }
 
@@ -197,7 +197,7 @@
   input,
   textarea,
   select {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 
   /* Selection styling */
@@ -215,7 +215,7 @@
   }
 
   .font-ui {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 
   /* Editorial image treatment */
@@ -263,7 +263,7 @@
 
   /* Metric number styling */
   .metric-number {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     @apply text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary;
   }
 
@@ -488,6 +488,15 @@
     animation: kenburns 10s ease-in-out infinite alternate;
   }
 
+  @keyframes card-pan {
+    0% { transform: scale(1.02) translateY(0); }
+    100% { transform: scale(1.06) translateY(-1.5%); }
+  }
+
+  .animate-card-pan {
+    animation: card-pan 9s ease-in-out infinite alternate;
+  }
+
   @keyframes orb-drift {
     0% { transform: translate3d(0, 0, 0) scale(1); }
     100% { transform: translate3d(2rem, -1rem, 0) scale(1.12); }
@@ -500,6 +509,7 @@
     .animate-hero-shift,
     .animate-marquee,
     .animate-kenburns,
+    .animate-card-pan,
     .ambient-orb {
       animation: none !important;
     }

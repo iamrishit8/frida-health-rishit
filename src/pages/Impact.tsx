@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Activity, Users, Landmark } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import { siteImages } from "@/lib/site-images";
 
 const Impact = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const Impact = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Impact"
-        image="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.impact.hero}
         alt="Impact"
       />
 
@@ -51,7 +52,7 @@ const Impact = () => {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <article className="overflow-hidden rounded-3xl border border-primary/10 bg-primary/5">
-              <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&q=80&w=1200" alt="Qualitative impact" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <img src={siteImages.impact.qualitative} alt="Qualitative impact" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
               <div className="p-7 md:p-9">
                 <h2 className="mb-4 text-3xl font-bold text-primary">Qualitative Impact</h2>
                 <p className="text-foreground/75">
@@ -60,7 +61,7 @@ const Impact = () => {
               </div>
             </article>
             <article className="overflow-hidden rounded-3xl border border-primary/10 bg-primary/5">
-              <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200" alt="Systems change" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <img src={siteImages.impact.systems} alt="Systems change" className="h-52 w-full object-cover" loading="lazy" decoding="async" />
               <div className="p-7 md:p-9">
                 <h2 className="mb-4 text-3xl font-bold text-primary">Systems Change</h2>
                 <p className="text-foreground/75">

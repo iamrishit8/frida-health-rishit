@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import Reveal from "@/components/ui/Reveal";
+import { siteImages } from "@/lib/site-images";
 
 const Index = () => {
   useEffect(() => {
@@ -45,7 +46,7 @@ const Index = () => {
             <div className="grid items-center gap-10 rounded-3xl border border-primary/10 bg-white p-6 shadow-xl shadow-primary/10 md:grid-cols-2 md:p-10">
               <div className="relative h-[340px] overflow-hidden rounded-2xl ring-1 ring-primary/10 md:h-[420px]">
                 <img
-                  src="/hero-women-community.jpg"
+                  src={siteImages.home.forumFeature}
                   alt="Parliamentarians Forum on Women's Health"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
                   loading="lazy"

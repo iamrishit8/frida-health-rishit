@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { CloudSun, Droplets, ClipboardList } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import { siteImages } from "@/lib/site-images";
 
 const Community = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const Community = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Community Engagement"
-        image="https://images.unsplash.com/photo-1469571486292-b53601020f70?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.community.hero}
         alt="Community engagement"
       />
 
@@ -31,7 +32,7 @@ const Community = () => {
             <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
               <div className="h-44 overflow-hidden rounded-2xl md:h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&q=80&w=1200"
+                  src={siteImages.community.initiatives.climate}
                   alt="Gendered climate impacts"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -52,7 +53,7 @@ const Community = () => {
             <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
               <div className="h-44 overflow-hidden rounded-2xl md:h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1516589091380-5d60138dbf5d?auto=format&fit=crop&q=80&w=1200"
+                  src={siteImages.community.initiatives.menstrual}
                   alt="Menstrual health education"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -73,7 +74,7 @@ const Community = () => {
             <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
               <div className="h-44 overflow-hidden rounded-2xl md:h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
+                  src={siteImages.community.initiatives.surveys}
                   alt="Community surveys"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -93,7 +94,7 @@ const Community = () => {
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {["https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1524601500432-1e1a4c71d692?auto=format&fit=crop&q=80&w=900", "https://images.unsplash.com/photo-1469571486292-b53601020f70?auto=format&fit=crop&q=80&w=900"].map((img) => (
+            {siteImages.community.gallery.map((img) => (
               <img key={img} src={img} alt="Community gallery" className="h-40 w-full rounded-xl object-cover" loading="lazy" decoding="async" />
             ))}
           </div>

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import PageHero from "@/components/ui/PageHero";
+import { siteImages } from "@/lib/site-images";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -28,7 +29,7 @@ const Contact = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Contact"
-        image="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.contact.hero}
         alt="Contact"
       />
 

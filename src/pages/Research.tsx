@@ -11,9 +11,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FileBarChart2, Download, Loader2 } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import PageHero from "@/components/ui/PageHero";
+import { siteImages } from "@/lib/site-images";
 
 const GOOGLE_FORM_ACTION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSexQLG65NWn22AmurLlXfArJ-JhX4J6xH8v4851yPSFmQ34EQ/formResponse";
@@ -28,7 +29,7 @@ const outputs = [
     date: "2025",
     summary:
       "A comprehensive mapping of the five most urgent health challenges facing Indian women today.",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.research.outputs.landscape,
     pdfUrl: "/sample.pdf",
   },
   {
@@ -36,7 +37,7 @@ const outputs = [
     type: "Policy Brief",
     date: "2025",
     summary: "",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.research.outputs.cervical,
     pdfUrl: "/sample.pdf",
   },
   {
@@ -44,7 +45,7 @@ const outputs = [
     type: "Policy Brief",
     date: "2025",
     summary: "",
-    image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.research.outputs.breast,
     pdfUrl: "/sample.pdf",
   },
   {
@@ -53,7 +54,7 @@ const outputs = [
     date: "2025",
     summary:
       "An in-depth exploration of how rising temperatures and environmental stress affect women's bodies, health, and daily life across South Asia. This work brings together existing knowledge to clarify emerging risks and guide a more gender-responsive climate health conversations.",
-    image: "https://images.unsplash.com/photo-1470004914212-05527e49370b?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.research.outputs.climate,
     pdfUrl: "/sample.pdf",
   },
   {
@@ -62,7 +63,7 @@ const outputs = [
     date: "2025",
     summary:
       "A study of how young people encounter, interpret, and access sexual and reproductive health information in digital spaces. This work helps map the landscape of online SRHR knowledge, highlighting barriers, misinformation risks, and opportunities to strengthen their understanding.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
+    image: siteImages.research.outputs.srhrOnline,
     pdfUrl: "/sample.pdf",
   },
 ];
@@ -108,7 +109,7 @@ const Research = () => {
 
       <PageHero
         title="Research"
-        image="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.research.hero}
         alt="Research"
       />
 
@@ -133,7 +134,7 @@ const Research = () => {
             {outputs.map((output, index) => (
               <article
                 key={output.title}
-                className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                className="overflow-hidden rounded-[1.8rem] border border-primary/10 bg-white shadow-[0_18px_52px_rgba(100,13,20,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_64px_rgba(100,13,20,0.08)]"
               >
                 <img src={output.image} alt={output.title} className="h-48 w-full object-cover" loading="lazy" decoding="async" />
                 <div className="p-6 md:p-8">
@@ -159,17 +160,6 @@ const Research = () => {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="mt-12 rounded-3xl border border-primary/10 bg-white p-6 md:p-8">
-            <div className="flex items-start gap-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
-                <FileBarChart2 className="h-5 w-5" />
-              </div>
-              <p className="text-foreground/75">
-                Each output is designed for practical use by policymakers, implementers, researchers, and community leaders working to improve health outcomes for women and girls.
-              </p>
-            </div>
           </div>
         </div>
       </section>

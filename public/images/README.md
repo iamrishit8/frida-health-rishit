@@ -1,6 +1,7 @@
 ## Image Asset Structure
 
 Place all site images inside `public/images/` using lowercase kebab-case names.
+All page-level image references are centralized in `src/lib/site-images.ts`.
 
 ### Preferred formats
 
@@ -71,3 +72,10 @@ Place all site images inside `public/images/` using lowercase kebab-case names.
 ### Current live reference
 
 The homepage hero currently reads from `public/images/home/hero-main.jpg`.
+
+### Replacement workflow
+
+1. Add the new file to the correct folder in `public/images/`.
+2. Keep the filename lowercase and descriptive.
+3. Update the matching entry in `src/lib/site-images.ts`.
+4. If a section uses an array, replace the relevant array item instead of editing page files directly.

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ArrowUpRight, Newspaper, Podcast, Video } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import { siteImages } from "@/lib/site-images";
 
 const features = [
   {
@@ -35,7 +36,7 @@ const Media = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Featured & Media"
-        image="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.media.hero}
         alt="Featured media"
       />
 

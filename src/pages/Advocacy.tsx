@@ -1,16 +1,5 @@
 import { useEffect } from "react";
-
-const policyImages = [
-  "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1603201667230-bd139210db18?auto=format&fit=crop&q=80&w=1200",
-];
-
-const communityImages = [
-  "https://images.unsplash.com/photo-1593113598332-cd59a93ad5a5?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1596079890744-2c5af4120ebc?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&q=80&w=1200",
-];
+import { siteImages } from "@/lib/site-images";
 
 const Advocacy = () => {
   useEffect(() => {
@@ -22,7 +11,7 @@ const Advocacy = () => {
       <section className="pt-20">
         <div className="grid min-h-[45vh] md:grid-cols-2">
           <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600"
+            src={siteImages.advocacy.hero}
             alt="Advocacy"
             className="h-full min-h-[260px] w-full object-cover"
           />
@@ -42,14 +31,14 @@ const Advocacy = () => {
 
       <section className="section-padding bg-white">
         <div className="section-container">
-          <div className="mb-10 rounded-3xl border border-primary/10 bg-primary/5 p-6 text-center md:p-8">
+          <div className="mb-10 rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(100,13,20,0.06),rgba(255,255,255,0.96))] p-7 text-center shadow-[0_18px_52px_rgba(100,13,20,0.05)] md:p-9">
             <p className="text-lg font-medium leading-relaxed text-foreground/80 md:text-xl">
               Our advocacy works on two fronts: inside the halls of policy, and within the communities we serve.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
-            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+            <article className="rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(100,13,20,0.04),rgba(255,255,255,1))] p-8 shadow-[0_18px_56px_rgba(100,13,20,0.06)] transition-transform duration-500 hover:-translate-y-1 md:p-10">
               <h2 className="mb-4 text-3xl font-bold text-primary">Policy Advocacy</h2>
               <p className="mb-6 text-foreground/75">
                 Influencing the systems that shape women's health. We engage directly with policymakers, government bodies, and institutional stakeholders to ensure that women's health agendas are grounded in rigorous evidence and real-world experience.
@@ -57,21 +46,9 @@ const Advocacy = () => {
               <p className="text-foreground/75">
                 From equipping Parliamentarians with research, shaping drafting of policies and Bills, to building coalitions and partnerships, we work to make policy more responsive, inclusive, and effective.
               </p>
-              <div className="mt-7 grid grid-cols-3 gap-3">
-                {policyImages.map((image, index) => (
-                  <img
-                    key={image}
-                    src={image}
-                    alt={`Policy advocacy ${index + 1}`}
-                    className="h-24 w-full rounded-xl object-cover md:h-28"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
-              </div>
             </article>
 
-            <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
+            <article className="rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(100,13,20,0.04),rgba(255,255,255,1))] p-8 shadow-[0_18px_56px_rgba(100,13,20,0.06)] transition-transform duration-500 hover:-translate-y-1 md:p-10">
               <h2 className="mb-4 text-3xl font-bold text-primary">Community Advocacy</h2>
               <p className="mb-6 text-foreground/75">
                 Building awareness, shifting norms. We work with communities, civil society, and the wider public to raise awareness, shift norms, enable behaviour change, and build collective demand for better women's health.
@@ -79,18 +56,6 @@ const Advocacy = () => {
               <p className="text-foreground/75">
                 Policy change is only meaningful and effective when it translates to the ground, amidst communities.
               </p>
-              <div className="mt-7 grid grid-cols-3 gap-3">
-                {communityImages.map((image, index) => (
-                  <img
-                    key={image}
-                    src={image}
-                    alt={`Community advocacy ${index + 1}`}
-                    className="h-24 w-full rounded-xl object-cover md:h-28"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
-              </div>
             </article>
           </div>
         </div>

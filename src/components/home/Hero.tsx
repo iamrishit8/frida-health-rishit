@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
+import { siteImages } from "@/lib/site-images";
 
 const Hero = () => {
   return (
     <section className="hero-shell relative min-h-[66vh] overflow-hidden md:min-h-[76vh]">
       <div className="absolute inset-0">
         <img
-          src="/images/home/hero-main.jpg"
+          src={siteImages.home.heroMain}
           alt="Girls in a community setting"
-          className="hero-image animate-kenburns h-full w-full object-cover object-center"
+          className="hero-image animate-kenburns h-full w-full object-cover object-[center_34%]"
           fetchPriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src =
-              "https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?auto=format&fit=crop&q=80&w=2200";
+            e.currentTarget.src = siteImages.home.heroFallback;
           }}
         />
         <div className="hero-overlay animate-hero-shift absolute inset-0 opacity-44" />

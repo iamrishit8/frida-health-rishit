@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Linkedin } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
+import { siteImages } from "@/lib/site-images";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
 
@@ -19,8 +20,7 @@ const teamMembers: TeamMember[] = [
     id: "prakshi",
     name: "Prakshi Saha",
     designation: "Founder",
-    photo:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.prakshi,
     linkedin: LINKEDIN_URL,
     bio: "Leads FRIDA's vision, strategic partnerships, and institution-building to ensure women's health remains central to policy and systems change.",
   },
@@ -28,8 +28,7 @@ const teamMembers: TeamMember[] = [
     id: "anita",
     name: "Dr. Anita Sharma",
     designation: "Executive Director",
-    photo:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.anita,
     linkedin: LINKEDIN_URL,
     bio: "Drives organizational strategy and interdisciplinary execution across research, advocacy, and engagement initiatives.",
   },
@@ -37,8 +36,7 @@ const teamMembers: TeamMember[] = [
     id: "rahul",
     name: "Rahul Verma",
     designation: "Head of Research",
-    photo:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.rahul,
     linkedin: LINKEDIN_URL,
     bio: "Leads evidence generation, synthesis, and publication development focused on women and girls' health outcomes.",
   },
@@ -46,8 +44,7 @@ const teamMembers: TeamMember[] = [
     id: "priya",
     name: "Priya Singh",
     designation: "Advocacy Lead",
-    photo:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.priya,
     linkedin: LINKEDIN_URL,
     bio: "Leads policy engagement, campaigns, and coalition building to advance women's health priorities across institutions.",
   },
@@ -55,8 +52,7 @@ const teamMembers: TeamMember[] = [
     id: "sarah",
     name: "Sarah John",
     designation: "Community Engagement Manager",
-    photo:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.sarah,
     linkedin: LINKEDIN_URL,
     bio: "Designs community-centered programs and participatory approaches that translate local realities into meaningful action.",
   },
@@ -64,8 +60,7 @@ const teamMembers: TeamMember[] = [
     id: "amit",
     name: "Amit Patel",
     designation: "Policy Analyst",
-    photo:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=900",
+    photo: siteImages.about.team.amit,
     linkedin: LINKEDIN_URL,
     bio: "Supports policy synthesis, systems analysis, and legislative tracking to strengthen evidence-informed advocacy outputs.",
   },
@@ -80,7 +75,7 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Who We Are"
-        image="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.about.hero}
         alt="FRIDA team"
       />
 
@@ -99,7 +94,7 @@ const About = () => {
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {["https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000", "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1000", "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1000"].map((img) => (
+            {siteImages.about.gallery.map((img) => (
               <img key={img} src={img} alt="About gallery" className="h-44 w-full rounded-2xl object-cover md:h-52" loading="lazy" decoding="async" />
             ))}
           </div>

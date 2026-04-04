@@ -3,17 +3,14 @@ import { CalendarDays } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { siteImages } from "@/lib/site-images";
 
 const events = [
   {
     title: "Winter Session 2025 Parliamentary Roundtable",
     date: "December 8, 2025",
-    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
-    gallery: [
-      "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
-    ],
+    image: siteImages.events.winterSession[0],
+    gallery: siteImages.events.winterSession,
     description: [
       "During the Parliament Winter Session of 2025, Frida convened a Parliamentary Roundtable bringing together members of our Parliamentarians' Forum to strengthen dialogue around women's health priorities and evidence-based policy pathways.",
       "The session launched three critical research outputs: Policy Brief on Strengthening India's Cervical Cancer Response, Policy Brief on Strengthening India's Breast Cancer Response, and Women's Health in India - Landscape Report.",
@@ -24,12 +21,8 @@ const events = [
     title: "Trust and Safety India Festival 2025",
     date: "October 7, 2025",
     subtitle: "Official Pre-Summit Event of the AI Impact Summit 2026",
-    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=1200",
-    gallery: [
-      "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
-    ],
+    image: siteImages.events.trustAndSafety[0],
+    gallery: siteImages.events.trustAndSafety,
     description: [
       "Frida partnered with the Trust and Safety India Festival (TASI) 2025 and hosted a side event, contributing a women's health lens to the global conversation on digital trust, safety, and governance.",
       "Panel titled Bodies, Bans, and Algorithms: Reclaiming SRHR Access in the Age of Digital Censorship and Control examined how digital censorship, content moderation systems, and algorithmic regulation shape access to sexual and reproductive health information.",
@@ -39,12 +32,8 @@ const events = [
   {
     title: "Period Party",
     date: "May 28, 2025",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
-    gallery: [
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=1200",
-    ],
+    image: siteImages.events.periodParty[0],
+    gallery: siteImages.events.periodParty,
     description: [
       "To mark World Menstrual Health Day, Frida hosted its first-ever Period Party, a creative, liberating, feminist space with 50+ participants for conversation, art, storytelling, and reflection around menstruation and bodily autonomy.",
       "The event featured the panel Bloody Hell and included voices from Swarnima Bhattacharya, Laetitia Bruce Warjri, Sachee Malhotra, and Sumedha Pal.",
@@ -62,7 +51,7 @@ const Events = () => {
     <div className="min-h-screen bg-white">
       <PageHero
         title="Events"
-        image="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&q=80&w=1600"
+        image={siteImages.events.hero}
         alt="Events"
       />
 
