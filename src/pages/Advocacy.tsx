@@ -63,26 +63,16 @@ const Advocacy = () => {
 
       <section className="section-padding bg-primary/5">
         <div className="section-container">
-          <h2 className="mb-10 text-center text-4xl font-bold text-primary">Campaigns</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Policy to Practice",
-                text: "Turning evidence into actionable public commitments for women's health outcomes across states.",
-              },
-              {
-                title: "Health Equity Dialogues",
-                text: "Public dialogues that connect researchers, communities, and institutions around pressing women's health priorities.",
-              },
-              {
-                title: "Evidence for Action",
-                text: "Bringing data, stories, and lived realities into policy conversations that shape inclusive health systems.",
-              },
-            ].map((campaign) => (
-              <article key={campaign.title} className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 text-2xl font-bold text-primary">{campaign.title}</h3>
-                <p className="text-foreground/75">{campaign.text}</p>
-              </article>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[siteImages.home.whatWeDo.advocacy, siteImages.advocacy.hero, siteImages.community.initiatives.surveys].map((img, index) => (
+              <img
+                key={`${img}-${index}`}
+                src={img}
+                alt={`Advocacy gallery ${index + 1}`}
+                className="h-56 w-full rounded-[1.5rem] object-cover shadow-[0_16px_48px_rgba(100,13,20,0.08)]"
+                loading="lazy"
+                decoding="async"
+              />
             ))}
           </div>
         </div>

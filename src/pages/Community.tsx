@@ -29,8 +29,8 @@ const Community = () => {
           <h2 className="mb-10 text-center text-4xl font-bold text-primary">Community Engagement Initiatives</h2>
 
           <div className="space-y-6">
-            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
-              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+            <article className="grid items-center gap-8 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-2 md:p-8">
+              <div className="relative h-[300px] overflow-hidden rounded-2xl md:h-[360px]">
                 <img
                   src={siteImages.community.initiatives.climate}
                   alt="Gendered climate impacts"
@@ -38,6 +38,7 @@ const Community = () => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/45 to-transparent" />
               </div>
               <div>
                 <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
@@ -50,8 +51,8 @@ const Community = () => {
               </div>
             </article>
 
-            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
-              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+            <article className="grid items-center gap-8 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-2 md:p-8">
+              <div className="relative order-1 h-[300px] overflow-hidden rounded-2xl md:order-2 md:h-[360px]">
                 <img
                   src={siteImages.community.initiatives.menstrual}
                   alt="Menstrual health education"
@@ -59,8 +60,9 @@ const Community = () => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/45 to-transparent" />
               </div>
-              <div>
+              <div className="order-2 md:order-1">
                 <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
                   <Droplets className="h-5 w-5" />
                 </div>
@@ -71,8 +73,8 @@ const Community = () => {
               </div>
             </article>
 
-            <article className="grid gap-6 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-[220px_1fr] md:p-8">
-              <div className="h-44 overflow-hidden rounded-2xl md:h-full">
+            <article className="grid items-center gap-8 rounded-3xl border border-primary/10 bg-white p-6 shadow-sm md:grid-cols-2 md:p-8">
+              <div className="relative h-[300px] overflow-hidden rounded-2xl md:h-[360px]">
                 <img
                   src={siteImages.community.initiatives.surveys}
                   alt="Community surveys"
@@ -80,6 +82,7 @@ const Community = () => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/45 to-transparent" />
               </div>
               <div>
                 <div className="mb-3 inline-flex rounded-full bg-primary/10 p-2 text-primary">
@@ -93,11 +96,6 @@ const Community = () => {
             </article>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {siteImages.community.gallery.map((img) => (
-              <img key={img} src={img} alt="Community gallery" className="h-40 w-full rounded-xl object-cover" loading="lazy" decoding="async" />
-            ))}
-          </div>
         </div>
       </section>
     </div>

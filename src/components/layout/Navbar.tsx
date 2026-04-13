@@ -29,10 +29,9 @@ const Navbar = () => {
     { name: "Advocacy", path: "/advocacy" },
     { name: "Parliamentary Forum", path: "/parliamentary-forum" },
     { name: "Community Engagement", path: "/community" },
+    { name: "Events", path: "/events" },
     { name: "Impact", path: "/impact" },
     { name: "Featured", path: "/featured" },
-    { name: "Events", path: "/events" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -63,7 +62,7 @@ const Navbar = () => {
               <NavLink 
                 key={link.name} 
                 to={link.path}
-                className="font-ui hover-underline text-sm font-medium tracking-[0.01em] text-foreground/80 transition-colors hover:text-primary"
+                className="font-ui hover-underline text-base font-medium tracking-[0.01em] text-foreground/80 transition-colors hover:text-primary"
                 activeClassName="font-ui text-primary font-semibold"
               >
                 {link.name}
@@ -93,7 +92,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "font-ui block rounded-lg border-b border-dashed border-primary/10 px-4 py-4 text-lg font-medium transition-colors last:border-0",
+                  "font-ui block rounded-lg border-b border-dashed border-primary/10 px-4 py-4 text-xl font-medium transition-colors last:border-0",
                   location.pathname === link.path
                     ? "bg-primary/5 text-primary font-bold"
                     : "text-foreground/80 hover:bg-primary/5 hover:text-primary"

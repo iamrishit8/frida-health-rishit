@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       <div className="section-container relative z-10 flex min-h-[66vh] flex-col justify-between py-8 md:min-h-[76vh] md:py-12">
-        <div className="animate-fade-in-up pt-6 md:pt-10">
+        <div className="animate-fade-in-up pt-6 md:-ml-8 md:pt-10 lg:-ml-14">
           <p className="font-ui mb-5 inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white/80 backdrop-blur-md md:text-xs">
             Research. Advocacy. Community.
           </p>
@@ -33,7 +33,7 @@ const Hero = () => {
 
         <div className="pointer-events-none flex flex-1 items-end justify-center pb-10 md:pb-14">
           <Link to="/about" className="pointer-events-auto">
-            <span className="hero-cta group">
+            <span className="hero-cta group animate-soft-float">
               <span className="hero-cta__label">Learn About FRIDA</span>
               <span className="hero-cta__icon" aria-hidden="true">
                 ↗

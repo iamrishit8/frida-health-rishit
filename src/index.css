@@ -155,7 +155,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base size */
+    font-size: 18px; /* Base size */
   -webkit-tap-highlight-color: transparent; /* Removes blue tap box on mobile */
   }
 
@@ -190,7 +190,7 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply text-[1.08rem] leading-relaxed md:text-[1.14rem];
   }
 
   button,
@@ -384,6 +384,10 @@
     box-shadow: 0 20px 44px hsl(var(--primary) / 0.34);
   }
 
+  .animate-soft-float {
+    animation: soft-float 4.6s ease-in-out infinite;
+  }
+
   .page-shell {
     position: relative;
   }
@@ -497,6 +501,11 @@
     animation: card-pan 9s ease-in-out infinite alternate;
   }
 
+  @keyframes soft-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
   @keyframes orb-drift {
     0% { transform: translate3d(0, 0, 0) scale(1); }
     100% { transform: translate3d(2rem, -1rem, 0) scale(1.12); }
@@ -510,6 +519,7 @@
     .animate-marquee,
     .animate-kenburns,
     .animate-card-pan,
+    .animate-soft-float,
     .ambient-orb {
       animation: none !important;
     }
@@ -517,7 +527,7 @@
 
   @media (max-width: 640px) {
     html {
-      font-size: 17px;
+      font-size: 19px;
     }
 
     body {

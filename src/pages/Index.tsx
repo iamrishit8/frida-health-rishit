@@ -2,7 +2,6 @@ import Hero from "@/components/home/Hero";
 import ImpactNumbers from "@/components/home/ImpactNumbers";
 import WhatWeDo from "@/components/home/WhatWeDo";
 import AreasOfWork from "@/components/home/AreasOfWork";
-import Partners from "@/components/home/Partners";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -22,13 +21,13 @@ const Index = () => {
       <section className="bg-white py-14 md:py-20">
         <div className="section-container">
           <Reveal className="mx-auto max-w-5xl rounded-3xl border border-primary/10 bg-primary/5 p-7 text-center shadow-sm md:p-10">
-            <p className="mb-3 text-lg leading-relaxed text-foreground/80 md:text-2xl">
+            <p className="mb-3 text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
               By strengthening knowledge, care, and systems around women and girls, we create change that reaches families, communities, and future generations.
             </p>
-            <p className="mb-3 text-lg leading-relaxed text-foreground/80 md:text-2xl">
+            <p className="mb-3 text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
               Advancing women's health through research, action, and systems change.
             </p>
-            <p className="text-lg leading-relaxed text-foreground/80 md:text-2xl">
+            <p className="text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
               Building evidence-driven solutions that strengthen lives, families, and futures.
             </p>
           </Reveal>
@@ -38,7 +37,7 @@ const Index = () => {
       <ImpactNumbers />
       <WhatWeDo />
       <AreasOfWork />
-      <Partners />
+      {/* <Partners /> */}
 
       <section className="section-padding bg-gradient-to-b from-white to-primary/5">
         <div className="section-container">

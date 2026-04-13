@@ -130,14 +130,17 @@ const Research = () => {
             <p className="max-w-xl text-right text-sm uppercase tracking-[0.2em] text-primary/65">Evidence to action</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {outputs.map((output, index) => (
               <article
                 key={output.title}
-                className="overflow-hidden rounded-[1.8rem] border border-primary/10 bg-white shadow-[0_18px_52px_rgba(100,13,20,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_64px_rgba(100,13,20,0.08)]"
+                className="group overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_18px_52px_rgba(100,13,20,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_64px_rgba(100,13,20,0.08)]"
               >
-                <img src={output.image} alt={output.title} className="h-48 w-full object-cover" loading="lazy" decoding="async" />
-                <div className="p-6 md:p-8">
+                <div className="relative overflow-hidden bg-primary/5 p-4 pt-6">
+                  <div className="absolute left-1/2 top-4 h-12 w-[74%] -translate-x-1/2 rounded-full bg-primary/12" />
+                  <img src={output.image} alt={output.title} className="h-[24rem] w-full rounded-[1.5rem] object-contain bg-white p-2 transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+                </div>
+                <div className="flex min-h-[18rem] flex-col p-6 md:p-8">
                   <div className="mb-4 flex flex-wrap items-center gap-3">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
                       {index + 1}
@@ -153,7 +156,7 @@ const Research = () => {
 
                   <Button
                     onClick={() => handleDownloadClick(output.title, output.pdfUrl)}
-                    className="rounded-full bg-primary px-6 text-white hover:bg-primary/90"
+                    className="mt-auto rounded-full bg-primary px-6 text-white hover:bg-primary/90"
                   >
                     Download Output <Download className="ml-2 h-4 w-4" />
                   </Button>

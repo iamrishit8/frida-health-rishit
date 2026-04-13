@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-import { Handshake, BookOpenCheck, ShieldCheck, Users, Landmark, MapPinned, Linkedin } from "lucide-react";
+import { Handshake, BookOpenCheck, ShieldCheck, Users, Landmark, MapPinned } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/lib/site-images";
-
-const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
 
 const members = [
   {
@@ -116,14 +114,28 @@ const ParliamentaryForum = () => {
             </article>
           </div>
 
-          <div className="mt-10 rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
-            <h2 className="mb-5 text-3xl font-bold text-primary">Context</h2>
-            <p className="text-foreground/75">
-              Women's health remains globally underprioritized, often overshadowed by broader health and economic agendas, despite its foundational role in social well-being and development index. This persistent neglect underscores the urgent need for greater political will and policy prioritisation. Parliamentary forums are a great way to build cross-party consensus and momentum to elevate women's health as a national policy priority.
-            </p>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
+              <h2 className="mb-5 text-3xl font-bold text-primary">Context</h2>
+              <p className="text-foreground/75">
+                Women's health remains globally underprioritized, often overshadowed by broader health and economic agendas, despite its foundational role in social well-being and development index. This persistent neglect underscores the urgent need for greater political will and policy prioritisation. Parliamentary forums are a great way to build cross-party consensus and momentum to elevate women's health as a national policy priority.
+              </p>
+              <div className="mt-8 grid gap-3 md:grid-cols-3">
+                {[siteImages.forum.hero, siteImages.forum.mapPlaceholder, siteImages.home.forumFeature].map((img, index) => (
+                  <img key={`context-${index}`} src={img} alt={`Context ${index + 1}`} className="h-40 w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+                ))}
+              </div>
+            </article>
 
-            <h3 className="mt-8 mb-3 text-2xl font-bold text-primary">Mission</h3>
-            <p className="text-foreground/80">Making women's health a policy priority, backed by political will and consensus.</p>
+            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
+              <h3 className="mb-3 text-2xl font-bold text-primary">Mission</h3>
+              <p className="text-foreground/80">Making women's health a policy priority, backed by political will and consensus.</p>
+              <div className="mt-8 grid gap-3 md:grid-cols-3">
+                {[siteImages.home.whatWeDo.advocacy, siteImages.home.whatWeDo.community, siteImages.community.hero].map((img, index) => (
+                  <img key={`mission-${index}`} src={img} alt={`Mission ${index + 1}`} className="h-40 w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+                ))}
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -170,31 +182,15 @@ const ParliamentaryForum = () => {
                 <Reveal key={member.name} delay={index * 0.05}>
                   <div className="group relative overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white shadow-[0_22px_80px_rgba(100,13,20,0.08)] transition-transform duration-500 hover:-translate-y-2">
                     <img src={member.photo} alt={member.name} className="h-96 w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/88 via-primary/52 to-transparent p-5 transition-opacity duration-300 group-hover:opacity-0">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/62 via-primary/18 to-transparent p-5 transition-opacity duration-300 group-hover:opacity-0">
                       <p className="text-base font-semibold text-white">{member.name}</p>
-                      <p className="text-xs uppercase tracking-wider text-white/75">{member.role}</p>
-                      <a
-                        href={LINKEDIN_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-2 inline-flex items-center rounded-full border border-white/45 bg-primary/30 px-3 py-1 text-[11px] uppercase tracking-wider text-white"
-                      >
-                        <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
-                      </a>
+                      <p className="text-xs uppercase tracking-wider text-white/85">{member.role}</p>
                     </div>
-                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary via-primary/95 to-primary/68 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/76 via-primary/46 to-primary/18 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <div className="translate-y-3 transition-transform duration-300 group-hover:translate-y-0">
                         <p className="text-lg font-semibold text-white">{member.name}</p>
-                        <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/70">{member.role}</p>
-                        <p className="mt-4 text-sm leading-relaxed text-white/92">{member.bio}</p>
-                        <a
-                          href={LINKEDIN_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-5 inline-flex items-center rounded-full border border-white/45 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm transition-colors hover:bg-white/18"
-                        >
-                          <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
-                        </a>
+                        <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/82">{member.role}</p>
+                        <p className="mt-4 text-base leading-relaxed text-white">{member.bio}</p>
                       </div>
                     </div>
                   </div>
