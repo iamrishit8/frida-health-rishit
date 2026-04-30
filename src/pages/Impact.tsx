@@ -14,6 +14,7 @@ const Impact = () => {
         title="Impact"
         image={siteImages.impact.hero}
         alt="Impact"
+        align="center"
       />
 
       <section className="py-12 md:py-16">

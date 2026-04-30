@@ -14,6 +14,7 @@ const Community = () => {
         title="Community Engagement"
         image={siteImages.community.hero}
         alt="Community engagement"
+        align="right"
       />
 
       <section className="py-12 md:py-16">
@@ -46,7 +47,7 @@ const Community = () => {
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-primary">Gendered Impacts of Climate</h3>
                 <p className="text-foreground/75">
-                  A community-based field interviews documenting how climate stress affects women's health, safety, and daily responsibilities. This work centers lived experiences to inform more responsive local and regional health strategies.
+                  A community-based field interviews documenting how climate stress affects women’s health, safety, and daily responsibilities. This work centers lived experiences to inform more responsive local and regional health strategies.
                 </p>
               </div>
             </article>
@@ -90,7 +91,7 @@ const Community = () => {
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-primary">Community Surveys & Listening Initiatives</h3>
                 <p className="text-foreground/75">
-                  Ongoing surveys and participatory assessments that capture women's health needs directly from communities. These insights shape our research priorities and ensure our work reflects real experiences rather than assumptions.
+                  Ongoing surveys and participatory assessments that capture women’s health needs directly from communities. These insights shape our research priorities and ensure our work reflects real experiences rather than assumptions
                 </p>
               </div>
             </article>

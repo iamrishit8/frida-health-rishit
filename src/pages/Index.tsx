@@ -22,13 +22,10 @@ const Index = () => {
         <div className="section-container">
           <Reveal className="mx-auto max-w-5xl rounded-3xl border border-primary/10 bg-primary/5 p-7 text-center shadow-sm md:p-10">
             <p className="mb-3 text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
-              By strengthening knowledge, care, and systems around women and girls, we create change that reaches families, communities, and future generations.
-            </p>
-            <p className="mb-3 text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
-              Advancing women's health through research, action, and systems change.
+              We advance women's health through research, advocacy, and systems change.
             </p>
             <p className="text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
-              Building evidence-driven solutions that strengthen lives, families, and futures.
+              In doing so, we strengthen knowledge, care, and systems around women and girls—creating lasting change that extends to families, communities, and future generations.
             </p>
           </Reveal>
         </div>
@@ -57,10 +54,10 @@ const Index = () => {
               <div>
                 <p className="mb-3 text-sm uppercase tracking-[0.25em] text-primary/70">Featured Initiative</p>
                 <h2 className="mb-5 text-3xl font-bold text-primary md:text-4xl">
-                  Parliamentarians' Forum on Women's Health
+                  Parliamentarians’ Forum on Women’s Health
                 </h2>
                 <p className="mb-7 text-lg leading-relaxed text-foreground/75">
-                  Built India's Parliamentarians' Forum on Women's Health, a cross-party network of legislators committed to prioritise women's health and well being.
+                  Built India’s Parliamentarians’ Forum on Women’s Health, a cross-party network of legislators committed to prioritise women’s health and well being
                 </p>
                 <div className="mb-7 flex flex-wrap gap-2 text-xs uppercase tracking-wider text-primary/80">
                   <span className="rounded-full bg-primary/10 px-3 py-1">Cross-party</span>

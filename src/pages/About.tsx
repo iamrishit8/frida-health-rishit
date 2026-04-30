@@ -4,8 +4,6 @@ import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/lib/site-images";
 
-const LINKEDIN_URL = "https://www.linkedin.com/company/fridahealth/posts/?feedView=all";
-
 type TeamMember = {
   id: string;
   name: string;
@@ -21,48 +19,56 @@ const teamMembers: TeamMember[] = [
     name: "Prakshi Saha",
     designation: "Founder",
     photo: siteImages.about.team.prakshi,
-    linkedin: LINKEDIN_URL,
+    linkedin: "https://www.linkedin.com/in/prakshi-saha/",
     bio: "Leads FRIDA's vision, strategic partnerships, and institution-building to ensure women's health remains central to policy and systems change.",
   },
   {
-    id: "anita",
-    name: "Dr. Anita Sharma",
-    designation: "Executive Director",
-    photo: siteImages.about.team.anita,
-    linkedin: LINKEDIN_URL,
-    bio: "Drives organizational strategy and interdisciplinary execution across research, advocacy, and engagement initiatives.",
+    id: "devyani",
+    name: "Devyani Srivastava",
+    designation: "Climate Research Lead",
+    photo: siteImages.about.team.devyani,
+    linkedin: "https://www.linkedin.com/in/devyani-srivastava17/",
+    bio: "Leads FRIDA's climate and women's health research agenda, connecting evidence, emerging risks, and policy relevance.",
   },
   {
-    id: "rahul",
-    name: "Rahul Verma",
-    designation: "Head of Research",
-    photo: siteImages.about.team.rahul,
-    linkedin: LINKEDIN_URL,
-    bio: "Leads evidence generation, synthesis, and publication development focused on women and girls' health outcomes.",
+    id: "adnan",
+    name: "Adnan Khan",
+    designation: "Policy and Partnerships Lead",
+    photo: siteImages.about.team.adnan,
+    linkedin: "https://www.linkedin.com/in/adnankhan81/",
+    bio: "Builds institutional partnerships and policy-facing collaborations that advance women's health priorities across sectors.",
   },
   {
-    id: "priya",
-    name: "Priya Singh",
-    designation: "Advocacy Lead",
-    photo: siteImages.about.team.priya,
-    linkedin: LINKEDIN_URL,
-    bio: "Leads policy engagement, campaigns, and coalition building to advance women's health priorities across institutions.",
+    id: "megda",
+    name: "Megda Bharadwaj",
+    designation: "Public Policy Specialist",
+    photo: siteImages.about.team.megda,
+    linkedin: "https://www.linkedin.com/in/megdabhrdwj/",
+    bio: "Supports public policy analysis and strategic advocacy with a focus on systems change and policy responsiveness.",
   },
   {
-    id: "sarah",
-    name: "Sarah John",
-    designation: "Community Engagement Manager",
-    photo: siteImages.about.team.sarah,
-    linkedin: LINKEDIN_URL,
-    bio: "Designs community-centered programs and participatory approaches that translate local realities into meaningful action.",
+    id: "sumaiya",
+    name: "Sumaiya Nazir",
+    designation: "Research Associate",
+    photo: siteImages.about.team.sumaiya,
+    linkedin: "https://linkedin.com/in/sumaiya-nazir-15b407203",
+    bio: "Contributes to research development, synthesis, and documentation across FRIDA's women's health priorities.",
   },
   {
-    id: "amit",
-    name: "Amit Patel",
-    designation: "Policy Analyst",
-    photo: siteImages.about.team.amit,
-    linkedin: LINKEDIN_URL,
-    bio: "Supports policy synthesis, systems analysis, and legislative tracking to strengthen evidence-informed advocacy outputs.",
+    id: "tisha",
+    name: "Tisha Tanwar",
+    designation: "Research Associate",
+    photo: siteImages.about.team.tisha,
+    linkedin: "https://www.linkedin.com/in/dr-tisha-tanwar-a95a5b2a3/",
+    bio: "Supports evidence-building and research coordination to strengthen FRIDA's knowledge and publication ecosystem.",
+  },
+  {
+    id: "diya",
+    name: "Diya Chaudhry",
+    designation: "Research Associate",
+    photo: siteImages.about.team.diya,
+    linkedin: "https://www.linkedin.com/in/diya-chaudhry-11b6372b1/",
+    bio: "Works across research and documentation to translate emerging insights into accessible women's health knowledge outputs.",
   },
 ];
 
@@ -77,6 +83,7 @@ const About = () => {
         title="Who We Are"
         image={siteImages.about.hero}
         alt="FRIDA team"
+        align="right"
       />
 
       <section className="py-12 md:py-16">
@@ -89,7 +96,7 @@ const About = () => {
               We use research, data, storytelling, policy advocacy, campaigns and community engagement to ensure women and girls have access to accurate knowledge, resources, and autonomy to make decisions about their bodies and health.
             </p>
             <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
-              At Frida, we see women's health as deeply interconnected with the systems that shape everyday life. Our work bridges evidence and action, translating research into conversations, and conversations into change.
+              At Frida, we see women's health as deeply interconnected with the systems that shape everyday life. Our work bridges evidence and action — translating research into conversations, and conversations into change.
             </p>
           </div>
 
@@ -131,7 +138,7 @@ const About = () => {
               Frida employs evidence- based research, policy advocacy, and community engagement to achieve its development outcomes.
             </p>
             <p className="mb-5 text-lg text-foreground/75 md:text-xl">
-              By grounding our work in both data and lived experiences, we forge partnerships and collaborations to build pathways that strengthen systems.
+              By grounding our work in both data and lived experiences, we forge partnerships and collaborations to build pathways that strengthen systems
             </p>
             <p className="text-lg font-medium text-primary md:text-xl">We translate evidence to action.</p>
           </div>
@@ -155,30 +162,31 @@ const About = () => {
                     loading="lazy"
                     decoding="async"
                   />
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/66 via-primary/22 to-transparent p-6 transition-opacity duration-300 group-hover:opacity-0">
-                    <p className="text-lg font-semibold text-white">{member.name}</p>
-                    <p className="font-ui text-sm uppercase tracking-wider text-white/80">{member.designation}</p>
+                  <div className="absolute inset-x-4 bottom-4 rounded-[1.4rem] border border-white/20 bg-primary/52 p-5 shadow-[0_18px_54px_rgba(0,0,0,0.18)] backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0">
+                    <p className="text-xl font-semibold text-white">{member.name}</p>
+                    <p className="mt-1 text-sm uppercase tracking-[0.16em] text-white/86">{member.designation}</p>
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-ui mt-3 inline-flex items-center rounded-full border border-white/40 bg-primary/14 px-3 py-1 text-xs uppercase tracking-wider text-white"
+                      className="mt-4 inline-flex items-center rounded-full border border-white/36 bg-white/12 px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-white"
                     >
                       <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
                     </a>
                   </div>
 
-                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/80 via-primary/56 to-primary/26 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/72 via-primary/46 to-primary/16 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="translate-y-3 transition-transform duration-300 group-hover:translate-y-0">
-                      <p className="text-lg font-semibold text-white">{member.name}</p>
-                      <p className="font-ui mt-1 text-xs uppercase tracking-[0.18em] text-white/78">{member.designation}</p>
-                      <p className="mt-4 text-base leading-relaxed text-white">{member.bio}</p>
+                      <p className="text-xl font-semibold text-white">{member.name}</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/86">{member.designation}</p>
+                      <p className="mt-4 rounded-[1.2rem] bg-black/10 p-3 text-base leading-relaxed text-white backdrop-blur-sm">{member.bio}</p>
                       <a
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-ui mt-5 inline-flex items-center rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm transition-colors hover:bg-white/18"
+                        className="mt-5 inline-flex items-center rounded-full border border-white/40 bg-white/12 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm transition-colors hover:bg-white/18"
                       >
                         <Linkedin className="mr-2 h-3 w-3" /> LinkedIn
                       </a>

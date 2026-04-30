@@ -62,7 +62,7 @@ const Navbar = () => {
               <NavLink 
                 key={link.name} 
                 to={link.path}
-                className="font-ui hover-underline text-base font-medium tracking-[0.01em] text-foreground/80 transition-colors hover:text-primary"
+                className="font-ui hover-underline text-lg font-medium tracking-[0.01em] text-foreground/80 transition-colors hover:text-primary"
                 activeClassName="font-ui text-primary font-semibold"
               >
                 {link.name}
@@ -92,7 +92,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "font-ui block rounded-lg border-b border-dashed border-primary/10 px-4 py-4 text-xl font-medium transition-colors last:border-0",
+                  "font-ui block rounded-lg border-b border-dashed border-primary/10 px-4 py-4 text-2xl font-medium transition-colors last:border-0",
                   location.pathname === link.path
                     ? "bg-primary/5 text-primary font-bold"
                     : "text-foreground/80 hover:bg-primary/5 hover:text-primary"

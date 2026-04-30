@@ -155,7 +155,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 18px; /* Base size */
+    font-size: 19px; /* Base size */
   -webkit-tap-highlight-color: transparent; /* Removes blue tap box on mobile */
   }
 
@@ -190,7 +190,7 @@
   }
 
   p {
-    @apply text-[1.08rem] leading-relaxed md:text-[1.14rem];
+    @apply text-[1.14rem] leading-relaxed md:text-[1.22rem];
   }
 
   button,
@@ -525,10 +525,10 @@
     }
   }
 
-  @media (max-width: 640px) {
-    html {
-      font-size: 19px;
-    }
+@media (max-width: 640px) {
+  html {
+      font-size: 20px;
+  }
 
     body {
       overflow-x: hidden;

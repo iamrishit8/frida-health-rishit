@@ -13,8 +13,8 @@ const ImpactNumbers = () => {
         <div className="relative z-10 grid gap-8 text-center md:grid-cols-3">
           {[
             { value: 5, suffix: "+", label: "Research Outputs" },
-            { value: 20, suffix: "+", label: "Policymakers Engaged" },
-            { value: 5000, suffix: "+", label: "Community Members Reached" },
+            { value: 20, suffix: "+", label: "policymakers engaged" },
+            { value: 5000, suffix: "+", label: "community members reached" },
           ].map((item, index) => (
             <Reveal key={item.label} delay={index * 0.08}>
               <div className="rounded-[2.2rem] border border-white/18 bg-white/8 p-10 shadow-[0_24px_80px_rgba(0,0,0,0.14)] backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white/12 md:p-12">

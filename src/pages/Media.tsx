@@ -5,25 +5,28 @@ import { siteImages } from "@/lib/site-images";
 
 const features = [
   {
-    type: "Press Release",
-    date: "December 2025",
-    title: "Frida launches Parliamentarians' Forum on Women's Health",
-    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    type: "The Print",
+    date: "2025",
+    title: "Putting women first: inter-party forum of MPs to bring women’s health into focus from winter session",
+    href: "https://theprint.in/health/putting-women-first-inter-party-forum-of-mps-to-bring-womens-health-into-focus-from-winter-session/2732210/",
     icon: Newspaper,
+    image: siteImages.media.previews.thePrint,
   },
   {
-    type: "Interview",
-    date: "October 2025",
-    title: "Digital safety, SRHR access, and policy conversations in India",
-    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    type: "The New Indian Express",
+    date: "2025",
+    title: "First-ever intra-party parliamentarian forum on women’s health to push for cervical cancer vaccine",
+    href: "https://www.newindianexpress.com/nation/2025/Aug/30/first-ever-intra-party-parliamentarian-forum-on-womens-health-to-push-for-cervical-cancer-vaccine",
     icon: Video,
+    image: siteImages.media.previews.newIndianExpress,
   },
   {
-    type: "Podcast",
-    date: "May 2025",
-    title: "Community narratives and feminist health futures",
-    href: "https://www.linkedin.com/company/fridahealth/posts/?feedView=all",
+    type: "YouTube",
+    date: "Video",
+    title: "Featured video conversation",
+    href: "https://youtu.be/82NW-l0bIUU?si=eSHkkcFhFFF80hG0",
     icon: Podcast,
+    image: siteImages.media.previews.youtube,
   },
 ];
 
@@ -38,6 +41,7 @@ const Media = () => {
         title="Featured & Media"
         image={siteImages.media.hero}
         alt="Featured media"
+        align="right"
       />
 
       <section className="py-12 md:py-16">
@@ -52,7 +56,24 @@ const Media = () => {
         <div className="section-container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
+              <article key={item.title} className="group overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_18px_52px_rgba(100,13,20,0.06)] transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative overflow-hidden bg-primary/5 p-4 pt-6">
+                  <div className="absolute left-1/2 top-4 h-12 w-[74%] -translate-x-1/2 rounded-full bg-primary/12" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-56 w-full rounded-[1.5rem] object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      e.currentTarget.src = siteImages.media.hero;
+                    }}
+                  />
+                  <div className="absolute inset-x-4 bottom-4 rounded-[1.25rem] bg-primary/74 p-3 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="text-sm font-medium leading-snug">Open publication preview</p>
+                  </div>
+                </div>
+                <div className="p-6">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs uppercase tracking-wider text-primary">{item.type}</span>
                   <item.icon className="h-5 w-5 text-primary/50" />
@@ -67,6 +88,7 @@ const Media = () => {
                 >
                   Open Link <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
+                </div>
               </article>
             ))}
           </div>

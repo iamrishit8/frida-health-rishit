@@ -36,7 +36,7 @@ const outputs = [
     title: "Strengthening India's Cervical Cancer Response: a Policy Brief",
     type: "Policy Brief",
     date: "2025",
-    summary: "",
+    summary: "An evidence-based assessment of India's cervical cancer burden and system needs.",
     image: siteImages.research.outputs.cervical,
     pdfUrl: "/sample.pdf",
   },
@@ -44,26 +44,17 @@ const outputs = [
     title: "Strengthening India's Breast Cancer Response: a Policy Brief",
     type: "Policy Brief",
     date: "2025",
-    summary: "",
+    summary: "An evidence-based assessment of India's breast cancer burden and system needs.",
     image: siteImages.research.outputs.breast,
     pdfUrl: "/sample.pdf",
   },
   {
-    title: "Heat, Climate & Women's Bodies in South Asia:",
-    type: "Thematic Analysis",
+    title: "Cervical Cancer FAQ Booklet",
+    type: "Booklet",
     date: "2025",
     summary:
-      "An in-depth exploration of how rising temperatures and environmental stress affect women's bodies, health, and daily life across South Asia. This work brings together existing knowledge to clarify emerging risks and guide a more gender-responsive climate health conversations.",
+      "This booklet provides clear, evidence-based information on cervical cancer, including prevention, early detection, treatment options, and vaccination.",
     image: siteImages.research.outputs.climate,
-    pdfUrl: "/sample.pdf",
-  },
-  {
-    title: "Navigating Sexual & Reproductive Health Information Online:",
-    type: "Digital Study",
-    date: "2025",
-    summary:
-      "A study of how young people encounter, interpret, and access sexual and reproductive health information in digital spaces. This work helps map the landscape of online SRHR knowledge, highlighting barriers, misinformation risks, and opportunities to strengthen their understanding.",
-    image: siteImages.research.outputs.srhrOnline,
     pdfUrl: "/sample.pdf",
   },
 ];
@@ -111,6 +102,7 @@ const Research = () => {
         title="Research"
         image={siteImages.research.hero}
         alt="Research"
+        align="center"
       />
 
       <section className="py-12 md:py-16">

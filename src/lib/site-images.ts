@@ -11,29 +11,24 @@ export const siteImages = {
     },
   },
   about: {
-    hero: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1600",
+    hero: "/images/about/hero.jpg",
     gallery: [
       "/images/about/gallery-01.jpg",
-      "/images/about/gallery-02.jpg",
+      "/images/about/gallery-02.JPG",
       "/images/about/gallery-03.jpg",
     ],
     team: {
-      prakshi:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=900",
-      anita:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=900",
-      rahul:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=900",
-      priya:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=900",
-      sarah:
-        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=900",
-      amit:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=900",
+      prakshi: "/images/team/prakshi-saha.jpg",
+      devyani: "/images/team/devyani-srivastava.jpg",
+      adnan: "/images/team/adnan-khan.jpg",
+      megda: "/images/team/megda-bharadwaj.jpg",
+      sumaiya: "/images/team/sumaiya-nazir.jpg",
+      tisha: "/images/team/tisha-tanwar.jpg",
+      diya: "/images/team/diya-chaudhry.jpg",
     },
   },
   research: {
-    hero: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&q=80&w=1600",
+    hero: "/images/research/hero.jpg",
     outputs: {
       landscape: "/images/research/output-landscape-report.jpg",
       cervical: "/images/research/output-cervical-cancer-policy-brief.jpg",
@@ -45,28 +40,28 @@ export const siteImages = {
   },
   advocacy: {
     hero: "/images/advocacy/hero.jpg",
+    gallery: [
+      "/images/advocacy/gallery-01.jpg",
+      "/images/advocacy/gallery-02.jpg",
+      "/images/advocacy/gallery-03.jpg",
+    ],
   },
   forum: {
     hero: "/images/forum/hero.jpg",
+    objectivesGraphic: "/images/forum/objectives-graphic.jpg",
     mapPlaceholder:
       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&q=80&w=1400",
     members: {
-      suresh:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=900",
-      gurumoorthy:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=900",
-      vishal:
-        "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=900",
-      fauzia:
-        "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=900",
-      pradyut:
-        "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&q=80&w=900",
-      sumathy:
-        "https://images.unsplash.com/photo-1573497019707-1c04de26e58f?auto=format&fit=crop&q=80&w=900",
-      sulata:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=900",
-      jothimani:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=900",
+      suresh: "/images/mps/kr-suresh-reddy.jpg",
+      gurumoorthy: "/images/mps/maddila-gurumoorthy.jpg",
+      vishal: "/images/mps/vishal-patil.jpg",
+      fauzia: "/images/mps/fauzia-khan.jpg",
+      pradyut: "/images/mps/pradyut-bordoloi.jpg",
+      sumathy: "/images/mps/t-sumathy.jpg",
+      sulata: "/images/mps/sulata-deo.jpg",
+      jothimani: "/images/mps/jothimani-s.jpg",
+      kavya: "/images/mps/kavya-kadiyam.jpg",
+      kanimozhi: "/images/mps/kanimozhi-nvn-somu.jpg",
     },
   },
   community: {
@@ -84,18 +79,26 @@ export const siteImages = {
     ],
   },
   impact: {
-    hero: "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=1600",
+    hero: "/images/impact/hero.jpg",
     qualitative: "/images/impact/qualitative.jpg",
     systems: "/images/impact/systems-change.jpg",
   },
   media: {
     hero: "/images/media/hero.jpg",
+    previews: {
+      thePrint: "/images/media/feature-the-print.jpg",
+      newIndianExpress: "/images/media/feature-new-indian-express.jpg",
+      youtube: "/images/media/feature-youtube.jpg",
+    },
   },
   contact: {
     hero: "/images/contact/hero.jpg",
   },
   events: {
     hero: "/images/events/hero.jpg",
+    ecosocYouthForum: [
+      "/images/events/ecosoc-youth-forum-01.jpg",
+    ],
     winterSession: [
       "/images/events/winter-session-01.jpg",
       "/images/events/winter-session-02.jpg",
@@ -112,6 +115,11 @@ export const siteImages = {
     ],
     periodParty: [
       "/images/events/period-party-01.jpg",
+      "/images/events/period-party-02.jpg",
+      "/images/events/period-party-03.jpg",
+      "/images/events/period-party-04.jpg",
+      "/images/events/period-party-05.jpg",
+      "/images/events/period-party-06.jpg",
     ],
   },
 } as const;
