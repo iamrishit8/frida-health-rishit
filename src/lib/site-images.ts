@@ -49,8 +49,19 @@ export const siteImages = {
   forum: {
     hero: "/images/forum/hero.jpg",
     objectivesGraphic: "/images/forum/objectives-graphic.jpg",
-    mapPlaceholder:
-      "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&q=80&w=1400",
+    contextGallery: [
+      "/images/forum/context-01.jpg",
+      "/images/forum/context-02.jpg",
+      "/images/forum/context-03.jpg",
+      "/images/forum/context-04.jpg",
+    ],
+    missionGallery: [
+      "/images/forum/mission-01.jpg",
+      "/images/forum/mission-02.jpg",
+      "/images/forum/mission-03.jpg",
+      "/images/forum/mission-04.jpg",
+    ],
+    mapImage: "/images/forum/map.jpg",
     members: {
       suresh: "/images/mps/kr-suresh-reddy.jpg",
       gurumoorthy: "/images/mps/maddila-gurumoorthy.jpg",

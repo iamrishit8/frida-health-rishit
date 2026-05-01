@@ -147,9 +147,16 @@ const ParliamentaryForum = () => {
                 Women's health remains globally underprioritized, often overshadowed by broader health and economic agendas, despite its foundational role in social well-being and development index. This persistent neglect underscores the urgent need for greater political will and policy prioritisation. Parliamentary forums are a great way to build cross-party consensus and a momentum to elevate women’s health as a national policy priority.
                 </p>
               </div>
-              <div className="mt-8 grid gap-3 md:grid-cols-3">
-                {[siteImages.forum.hero, siteImages.forum.mapPlaceholder, siteImages.home.forumFeature].map((img, index) => (
-                  <img key={`context-${index}`} src={img} alt={`Context ${index + 1}`} className="h-40 w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+              <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {siteImages.forum.contextGallery.map((img, index) => (
+                  <img
+                    key={`context-${index}`}
+                    src={img}
+                    alt={`Context ${index + 1}`}
+                    className="h-40 w-full rounded-2xl object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ))}
               </div>
             </article>
@@ -159,9 +166,16 @@ const ParliamentaryForum = () => {
               <div className="min-h-[14rem]">
                 <p className="text-foreground/80">Making women’s health a policy priority, backed by political will and consensus</p>
               </div>
-              <div className="mt-8 grid gap-3 md:grid-cols-3">
-                {[siteImages.home.whatWeDo.advocacy, siteImages.home.whatWeDo.community, siteImages.community.hero].map((img, index) => (
-                  <img key={`mission-${index}`} src={img} alt={`Mission ${index + 1}`} className="h-40 w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+              <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {siteImages.forum.missionGallery.map((img, index) => (
+                  <img
+                    key={`mission-${index}`}
+                    src={img}
+                    alt={`Mission ${index + 1}`}
+                    className="h-40 w-full rounded-2xl object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ))}
               </div>
             </article>
@@ -202,7 +216,7 @@ const ParliamentaryForum = () => {
               <h2 className="mb-4 text-3xl font-bold text-primary">Map and Representation</h2>
               <div className="h-[320px] overflow-hidden rounded-2xl bg-primary/10">
                 <img
-                  src={siteImages.forum.mapPlaceholder}
+                  src={siteImages.forum.mapImage}
                   alt="Map placeholder"
                   className="h-full w-full object-cover"
                   loading="lazy"

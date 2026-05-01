@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { siteImages } from "@/lib/site-images";
 
 const Hero = () => {
@@ -31,16 +30,7 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className="pointer-events-none flex flex-1 items-end justify-center pb-10 md:pb-14">
-          <Link to="/about" className="pointer-events-auto">
-            <span className="hero-cta group animate-soft-float">
-              <span className="hero-cta__label">Learn About FRIDA</span>
-              <span className="hero-cta__icon" aria-hidden="true">
-                ↗
-              </span>
-            </span>
-          </Link>
-        </div>
+        <div className="flex-1" />
       </div>
     </section>
   );
