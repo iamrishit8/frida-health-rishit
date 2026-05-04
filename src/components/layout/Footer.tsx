@@ -55,8 +55,7 @@ const Footer = () => {
                </div>
             </Link>
             <p className="max-w-sm text-base leading-relaxed text-white/85 md:text-lg">
-              Fostering Research, Impact, Development & Advocacy.
-              Empowering communities through evidence-based policy to build a healthier, more equitable future.
+              FRIDA is a not for profit organisation based in India, South Asia, working towards advancing women's health, wellbeing, and dignity
             </p>
           </div>
 

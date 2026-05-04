@@ -194,12 +194,12 @@ const ParliamentaryForum = () => {
             </article>
 
             <article className="rounded-3xl border border-primary/10 bg-white p-7 shadow-sm md:p-9">
-              <h2 className="mb-4 text-3xl font-bold text-primary">Map and Representation</h2>
-              <div className="h-[320px] overflow-hidden rounded-2xl bg-primary/10">
+              <h2 className="mb-4 text-3xl font-bold text-primary">Diversity in representation</h2>
+              <div className="flex h-[320px] items-center justify-center overflow-hidden rounded-2xl bg-primary/5 p-4 md:h-[360px] md:p-6">
                 <img
                   src={siteImages.forum.mapImage}
                   alt="Map and representation"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
