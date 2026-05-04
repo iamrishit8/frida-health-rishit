@@ -14,7 +14,7 @@ export const siteImages = {
     hero: "/images/about/hero.jpg",
     gallery: [
       "/images/about/gallery-01.jpg",
-      "/images/about/gallery-02.JPG",
+      "/images/about/gallery-02.jpg",
       "/images/about/gallery-03.jpg",
     ],
     team: {

@@ -21,7 +21,7 @@ const features = [
     image: siteImages.media.previews.newIndianExpress,
   },
   {
-    type: "YouTube",
+    type: "South Era Network",
     date: "Video",
     title: "Featured video conversation",
     href: "https://youtu.be/82NW-l0bIUU?si=eSHkkcFhFFF80hG0",

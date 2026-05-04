@@ -22,10 +22,10 @@ const Index = () => {
         <div className="section-container">
           <Reveal className="mx-auto max-w-5xl rounded-3xl border border-primary/10 bg-primary/5 p-7 text-center shadow-sm md:p-10">
             <p className="mb-3 text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
-              We advance women's health through research, advocacy, and systems change.
+              FRIDA is a not for profit organisation based in India, South Asia, working towards advancing women's health, wellbeing, and dignity, through research, advocacy, and systems change.
             </p>
             <p className="text-xl font-semibold leading-relaxed text-foreground/85 md:text-[2rem]">
-              In doing so, we strengthen knowledge, care, and systems around women and girls—creating lasting change that extends to families, communities, and future generations.
+              In doing so, we strengthen knowledge, care, and systems around women and girls, creating lasting change that impacts families, communities, and future generations.
             </p>
           </Reveal>
         </div>

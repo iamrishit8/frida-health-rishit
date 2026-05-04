@@ -8,61 +8,51 @@ const members = [
   {
     name: "KR Suresh Reddy",
     role: "Former Member of Parliament",
-    bio: "Supports stronger legislative attention to women's health priorities and long-term systems reform.",
     photo: siteImages.forum.members.suresh,
   },
   {
     name: "Dr. Maddila Gurumoorthy",
     role: "Member of Parliament",
-    bio: "Advocates for evidence-informed policy pathways that improve prevention, care access, and health equity.",
     photo: siteImages.forum.members.gurumoorthy,
   },
   {
     name: "Vishal Patil",
     role: "Member of Parliament",
-    bio: "Focuses on connecting constituency-level realities with national policy conversations on women's health.",
     photo: siteImages.forum.members.vishal,
   },
   {
     name: "Dr. Fauzia Khan",
     role: "Former Member of Parliament",
-    bio: "Contributes to cross-party dialogue on equitable and inclusive health systems for women and girls.",
     photo: siteImages.forum.members.fauzia,
   },
   {
     name: "Pradyut Bordoloi",
     role: "Former Member of Parliament",
-    bio: "Engages in policy discussions that strengthen accountability and improve service delivery outcomes.",
     photo: siteImages.forum.members.pradyut,
   },
   {
-    name: "Dr. T Sumathy",
+    name: "Dr. Thamizhachi Thangapandian",
     role: "Member of Parliament",
-    bio: "Supports sustained consensus-building around women-centered health interventions and rights.",
     photo: siteImages.forum.members.sumathy,
   },
   {
     name: "Sulata Deo",
     role: "Member of Parliament",
-    bio: "Advocates for stronger representation of lived experiences in public health and policy design.",
     photo: siteImages.forum.members.sulata,
   },
   {
     name: "Jothimani S.",
     role: "Member of Parliament",
-    bio: "Contributes to policy action that advances autonomy, dignity, and equitable access in women's health.",
     photo: siteImages.forum.members.jothimani,
   },
   {
-    name: "Kavya Kadiyam",
+    name: "Dr. Kadiyam Kavya",
     role: "Member of Parliament",
-    bio: "Supports dialogue and collaboration that keeps women's health visible within parliamentary conversations and priorities.",
     photo: siteImages.forum.members.kavya,
   },
   {
-    name: "Kanimozhi NVN Somu",
+    name: "Dr. Kanimozhi NVN Somu",
     role: "Member of Parliament",
-    bio: "Brings a strong focus on representation, dignity, and accountability in advancing women's health policy action.",
     photo: siteImages.forum.members.kanimozhi,
   },
 ];
@@ -81,6 +71,8 @@ const objectives = [
     icon: ShieldCheck,
   },
 ];
+
+const forumGallery = [...siteImages.forum.contextGallery, ...siteImages.forum.missionGallery];
 
 const ParliamentaryForum = () => {
   useEffect(() => {
@@ -140,45 +132,34 @@ const ParliamentaryForum = () => {
           </div>
 
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <article className="flex h-full flex-col justify-between rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
+            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
               <h2 className="mb-5 text-3xl font-bold text-primary">Context</h2>
-              <div className="min-h-[14rem]">
+              <div className="min-h-[16rem]">
                 <p className="text-foreground/75">
                 Women's health remains globally underprioritized, often overshadowed by broader health and economic agendas, despite its foundational role in social well-being and development index. This persistent neglect underscores the urgent need for greater political will and policy prioritisation. Parliamentary forums are a great way to build cross-party consensus and a momentum to elevate women’s health as a national policy priority.
                 </p>
               </div>
-              <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                {siteImages.forum.contextGallery.map((img, index) => (
-                  <img
-                    key={`context-${index}`}
-                    src={img}
-                    alt={`Context ${index + 1}`}
-                    className="h-40 w-full rounded-2xl object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
-              </div>
             </article>
 
-            <article className="flex h-full flex-col justify-between rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
+            <article className="rounded-3xl border border-primary/10 bg-primary/5 p-6 md:p-10">
               <h3 className="mb-3 text-2xl font-bold text-primary">Mission</h3>
-              <div className="min-h-[14rem]">
+              <div className="min-h-[16rem]">
                 <p className="text-foreground/80">Making women’s health a policy priority, backed by political will and consensus</p>
               </div>
-              <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                {siteImages.forum.missionGallery.map((img, index) => (
-                  <img
-                    key={`mission-${index}`}
-                    src={img}
-                    alt={`Mission ${index + 1}`}
-                    className="h-40 w-full rounded-2xl object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
-              </div>
             </article>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {forumGallery.map((img, index) => (
+              <img
+                key={`${img}-${index}`}
+                src={img}
+                alt={`Parliamentary Forum gallery ${index + 1}`}
+                className="h-48 w-full rounded-[1.5rem] object-cover shadow-[0_16px_48px_rgba(100,13,20,0.08)]"
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -217,7 +198,7 @@ const ParliamentaryForum = () => {
               <div className="h-[320px] overflow-hidden rounded-2xl bg-primary/10">
                 <img
                   src={siteImages.forum.mapImage}
-                  alt="Map placeholder"
+                  alt="Map and representation"
                   className="h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -233,17 +214,10 @@ const ParliamentaryForum = () => {
                 <Reveal key={member.name} delay={index * 0.05}>
                   <div className="group relative overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white shadow-[0_22px_80px_rgba(100,13,20,0.08)] transition-transform duration-500 hover:-translate-y-2">
                     <img src={member.photo} alt={member.name} className="h-[22rem] w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
-                    <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
-                    <div className="absolute inset-x-4 bottom-4 rounded-[1.4rem] border border-white/20 bg-primary/52 p-5 shadow-[0_18px_54px_rgba(0,0,0,0.18)] backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0">
+                    <div className="absolute inset-0 bg-primary/12 mix-blend-multiply" />
+                    <div className="absolute inset-x-4 bottom-4 rounded-[1.4rem] border border-white/20 bg-primary/50 p-5 shadow-[0_18px_54px_rgba(0,0,0,0.18)] backdrop-blur-md">
                       <p className="text-xl font-semibold text-white">{member.name}</p>
                       <p className="mt-1 text-sm uppercase tracking-[0.16em] text-white/86">{member.role}</p>
-                    </div>
-                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/72 via-primary/46 to-primary/16 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <div className="translate-y-3 transition-transform duration-300 group-hover:translate-y-0">
-                        <p className="text-xl font-semibold text-white">{member.name}</p>
-                        <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/86">{member.role}</p>
-                        <p className="mt-4 rounded-[1.2rem] bg-black/10 p-3 text-base leading-relaxed text-white backdrop-blur-sm">{member.bio}</p>
-                      </div>
                     </div>
                   </div>
                 </Reveal>

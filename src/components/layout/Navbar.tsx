@@ -42,18 +42,15 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-22 items-center justify-between md:h-24">
           {/* Logo Section */}
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
             <img 
                src="/logo.png" 
                alt="FRIDA Logo" 
-               className="h-10 w-auto transition-transform group-hover:scale-105"
+               className="h-14 w-auto transition-transform group-hover:scale-105 md:h-16"
                onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
-            <span className="text-2xl font-serif font-bold text-primary tracking-tight transition-opacity group-hover:opacity-80">
-              FRIDA
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,7 +82,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="xl:hidden absolute top-20 left-0 w-full bg-white border-b border-primary/10 shadow-lg animate-fade-in-up h-[calc(100vh-5rem)] overflow-y-auto">
+        <div className="xl:hidden absolute left-0 top-22 w-full overflow-y-auto border-b border-primary/10 bg-white shadow-lg animate-fade-in-up md:top-24 h-[calc(100vh-5.5rem)] md:h-[calc(100vh-6rem)]">
           <div className="px-4 pt-4 pb-8 space-y-3">
             {navLinks.map((link) => (
               <Link

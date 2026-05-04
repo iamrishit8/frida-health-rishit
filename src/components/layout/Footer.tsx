@@ -49,10 +49,9 @@ const Footer = () => {
                  <img 
                     src="/logo.png" 
                     alt="FRIDA Logo" 
-                    className="h-12 w-auto bg-white rounded-md p-1" // Added white bg to ensure logo visibility on maroon
+                    className="h-24 w-auto rounded-md bg-white p-1.5 md:h-28" // Added white bg to ensure logo visibility on maroon
                     onError={(e) => { e.currentTarget.style.display = 'none'; }} // Hide if missing
                  />
-                 <span className="text-3xl font-serif font-bold tracking-tight">FRIDA</span>
                </div>
             </Link>
             <p className="max-w-sm text-base leading-relaxed text-white/85 md:text-lg">

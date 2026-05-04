@@ -16,7 +16,7 @@ const Advocacy = () => {
         align="right"
       />
 
-      <section className="py-12 md:py-16">
+      <section className="pb-6 pt-12 md:pb-8 md:pt-16">
         <div className="section-container">
           <div className="mx-auto max-w-5xl text-center">
             <p className="mb-4 text-lg leading-relaxed text-foreground/75 md:text-xl">
@@ -29,7 +29,7 @@ const Advocacy = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="bg-white pb-16 pt-2 md:pb-20 md:pt-4">
         <div className="section-container">
           <div className="mb-10 rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(100,13,20,0.06),rgba(255,255,255,0.96))] p-7 text-center shadow-[0_18px_52px_rgba(100,13,20,0.05)] md:p-9">
             <p className="text-lg font-medium leading-relaxed text-foreground/80 md:text-xl">
